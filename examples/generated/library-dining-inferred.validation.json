@@ -1,0 +1,50 @@
+{
+  "valid": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
+  "input": "examples\\library-dining-inferred.json",
+  "output": "generated\\library-dining-inferred.sh3d",
+  "svg": "generated\\library-dining-inferred.svg",
+  "png": "generated\\library-dining-inferred.png",
+  "archive_inspection": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "counts": {
+      "property": 5,
+      "environment": 1,
+      "camera": 1,
+      "observerCamera": 2,
+      "level": 1,
+      "doorOrWindow": 1,
+      "pieceOfFurniture": 32,
+      "light": 2,
+      "wall": 4,
+      "room": 1
+    },
+    "entries": [
+      "Home.xml",
+      "1/door/door.obj",
+      "1/door/door.mtl",
+      "2/bookcase-base_ratio0p33-shelves6/bookcase-base_ratio0p33-shelves6.obj",
+      "2/bookcase-base_ratio0p33-shelves6/bookcase-base_ratio0p33-shelves6.mtl",
+      "3/cabinet/cabinet.obj",
+      "3/cabinet/cabinet.mtl",
+      "4/dining-table/dining-table.obj",
+      "4/dining-table/dining-table.mtl",
+      "5/chandelier-drop_ratio0p35-tiers4/chandelier-drop_ratio0p35-tiers4.obj",
+      "5/chandelier-drop_ratio0p35-tiers4/chandelier-drop_ratio0p35-tiers4.mtl",
+      "6/chair/chair.obj",
+      "6/chair/chair.mtl",
+      "7/coffered-ceiling-beam_ratio0p13-columns3-cross_braces0-rows3/coffered-ceiling-beam_ratio0p13-columns3-cross_braces0-rows3.obj",
+      "7/coffered-ceiling-beam_ratio0p13-columns3-cross_braces0-rows3/coffered-ceiling-beam_ratio0p13-columns3-cross_braces0-rows3.mtl",
+      "8/books/books.obj",
+      "8/books/books.mtl",
+      "9/box/box.obj",
+      "9/box/box.mtl"
+    ],
+    "xml_version": "7000"
+  }
+}

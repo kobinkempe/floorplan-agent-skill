@@ -1,0 +1,965 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/create-sh3d-floorplans/floorplan.schema.json",
+  "title": "Canonical Sweet Home 3D Floorplan",
+  "description": "Auditable, centimeter-based semantic floorplan source compiled into SH3D.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project",
+    "coordinate_system",
+    "provenance",
+    "levels",
+    "cameras",
+    "walls",
+    "spaces",
+    "openings",
+    "objects"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "selected_level_id",
+        "default_wall_thickness_cm",
+        "default_wall_height_cm"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "selected_level_id": {
+          "$ref": "#/$defs/id"
+        },
+        "default_wall_thickness_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "default_wall_height_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 2000
+        }
+      }
+    },
+    "coordinate_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "units",
+        "origin",
+        "x_axis",
+        "y_axis",
+        "z_axis"
+      ],
+      "properties": {
+        "units": {
+          "const": "cm"
+        },
+        "origin": {
+          "const": "plan-top-left"
+        },
+        "x_axis": {
+          "const": "right-east"
+        },
+        "y_axis": {
+          "const": "down-south"
+        },
+        "z_axis": {
+          "const": "up"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "measurement_status",
+        "sources",
+        "observations",
+        "assumptions",
+        "disclaimer"
+      ],
+      "properties": {
+        "source_type": {
+          "enum": [
+            "image",
+            "text",
+            "measured-drawing",
+            "mixed"
+          ]
+        },
+        "measurement_status": {
+          "enum": [
+            "estimated",
+            "measured",
+            "mixed"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/provenance_item"
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/provenance_item"
+          }
+        },
+        "disclaimer": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 2000
+        }
+      }
+    },
+    "levels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/level"
+      }
+    },
+    "cameras": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/camera"
+      }
+    },
+    "walls": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/wall"
+      }
+    },
+    "spaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/space"
+      }
+    },
+    "openings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/opening"
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/object"
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional overall lighting and backdrop. Omitted keys use Sweet Home 3D's own defaults. light_color scales the entire 3D view and is the strongest single control over how a render reads.",
+      "properties": {
+        "light_color": {
+          "$ref": "#/$defs/color"
+        },
+        "ceiling_light_color": {
+          "$ref": "#/$defs/color"
+        },
+        "sky_color": {
+          "$ref": "#/$defs/color"
+        },
+        "ground_color": {
+          "$ref": "#/$defs/color"
+        },
+        "walls_alpha": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x_cm",
+        "y_cm"
+      ],
+      "properties": {
+        "x_cm": {
+          "type": "number",
+          "minimum": -100000,
+          "maximum": 100000
+        },
+        "y_cm": {
+          "type": "number",
+          "minimum": -100000,
+          "maximum": 100000
+        }
+      }
+    },
+    "camera_point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x_cm",
+        "y_cm",
+        "z_cm"
+      ],
+      "properties": {
+        "x_cm": {
+          "type": "number",
+          "minimum": -100000,
+          "maximum": 100000
+        },
+        "y_cm": {
+          "type": "number",
+          "minimum": -100000,
+          "maximum": 100000
+        },
+        "z_cm": {
+          "type": "number",
+          "minimum": -100000,
+          "maximum": 100000
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis",
+        "confidence",
+        "note"
+      ],
+      "properties": {
+        "basis": {
+          "enum": [
+            "observed",
+            "estimated",
+            "specified",
+            "derived"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "uri",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "image",
+            "text",
+            "drawing",
+            "measurement"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      }
+    },
+    "provenance_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_id",
+        "statement",
+        "confidence",
+        "affects"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "affects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      }
+    },
+    "level": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "elevation_cm",
+        "floor_thickness_cm",
+        "ceiling_height_cm",
+        "elevation_index",
+        "visible",
+        "viewable",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "elevation_cm": {
+          "type": "number",
+          "minimum": -10000,
+          "maximum": 10000
+        },
+        "floor_thickness_cm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 300
+        },
+        "ceiling_height_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 2000
+        },
+        "elevation_index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "viewable": {
+          "type": "boolean"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "mode",
+        "position",
+        "target",
+        "field_of_view_degrees",
+        "lens",
+        "active",
+        "matches_source_id",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "mode": {
+          "enum": [
+            "observer",
+            "aerial"
+          ]
+        },
+        "position": {
+          "$ref": "#/$defs/camera_point"
+        },
+        "target": {
+          "$ref": "#/$defs/camera_point"
+        },
+        "field_of_view_degrees": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 170
+        },
+        "lens": {
+          "enum": [
+            "pinhole",
+            "normal",
+            "fisheye",
+            "spherical"
+          ]
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "matches_source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      }
+    },
+    "wall": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "level_id",
+        "name",
+        "role",
+        "start",
+        "end",
+        "thickness_cm",
+        "height_cm",
+        "color",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "level_id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "role": {
+          "enum": [
+            "exterior",
+            "interior",
+            "partition",
+            "railing"
+          ]
+        },
+        "start": {
+          "$ref": "#/$defs/point"
+        },
+        "end": {
+          "$ref": "#/$defs/point"
+        },
+        "thickness_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "height_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 2000
+        },
+        "height_at_end_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 2000
+        },
+        "color": {
+          "$ref": "#/$defs/color"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "shape_params": {
+          "$ref": "#/$defs/shape_params"
+        }
+      }
+    },
+    "surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "color",
+        "shininess"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "color": {
+          "$ref": "#/$defs/color"
+        },
+        "shininess": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "space": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "level_id",
+        "name",
+        "kind",
+        "polygon",
+        "floor",
+        "ceiling",
+        "area_visible",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "level_id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "kind": {
+          "enum": [
+            "room",
+            "balcony",
+            "gallery",
+            "terrace",
+            "landing",
+            "void"
+          ]
+        },
+        "polygon": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 200,
+          "items": {
+            "$ref": "#/$defs/point"
+          }
+        },
+        "floor": {
+          "$ref": "#/$defs/surface"
+        },
+        "ceiling": {
+          "$ref": "#/$defs/surface"
+        },
+        "area_visible": {
+          "type": "boolean"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "void"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "floor": {
+                "properties": {
+                  "enabled": {
+                    "const": false
+                  }
+                }
+              },
+              "ceiling": {
+                "properties": {
+                  "enabled": {
+                    "const": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "swing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hinge",
+        "direction",
+        "angle_degrees"
+      ],
+      "properties": {
+        "hinge": {
+          "enum": [
+            "left",
+            "right",
+            "none"
+          ]
+        },
+        "direction": {
+          "enum": [
+            "in",
+            "out",
+            "none"
+          ]
+        },
+        "angle_degrees": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 180
+        }
+      }
+    },
+    "opening": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "wall_id",
+        "name",
+        "type",
+        "center_offset_cm",
+        "width_cm",
+        "height_cm",
+        "sill_height_cm",
+        "depth_cm",
+        "color",
+        "swing",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "wall_id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "type": {
+          "enum": [
+            "door",
+            "sliding-door",
+            "window",
+            "opening"
+          ]
+        },
+        "center_offset_cm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "width_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 5000
+        },
+        "height_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 2000
+        },
+        "sill_height_cm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2000
+        },
+        "depth_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 200
+        },
+        "color": {
+          "$ref": "#/$defs/color"
+        },
+        "swing": {
+          "$ref": "#/$defs/swing"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "shape_params": {
+          "$ref": "#/$defs/shape_params"
+        }
+      }
+    },
+    "object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "level_id",
+        "name",
+        "category",
+        "shape",
+        "center",
+        "width_cm",
+        "depth_cm",
+        "height_cm",
+        "elevation_cm",
+        "angle_degrees",
+        "color",
+        "movable",
+        "evidence"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "level_id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "category": {
+          "enum": [
+            "cabinet",
+            "counter",
+            "table",
+            "chair",
+            "sofa",
+            "bookcase",
+            "fireplace",
+            "light",
+            "column",
+            "decor",
+            "fixture",
+            "other"
+          ]
+        },
+        "shape": {
+          "enum": [
+            "box",
+            "cylinder",
+            "bookcase",
+            "books",
+            "cabinet",
+            "counter",
+            "sofa",
+            "armchair",
+            "chair",
+            "dining-table",
+            "round-table",
+            "island",
+            "linear-pendant",
+            "curved-banquette",
+            "chandelier",
+            "fireplace",
+            "coffered-ceiling",
+            "wall-panel",
+            "sconce",
+            "deco-railing",
+            "rug",
+            "curtain",
+            "sunburst",
+            "crown-moulding"
+          ]
+        },
+        "center": {
+          "$ref": "#/$defs/point"
+        },
+        "width_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 10000
+        },
+        "depth_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 10000
+        },
+        "height_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 5000
+        },
+        "elevation_cm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5000
+        },
+        "angle_degrees": {
+          "type": "number",
+          "minimum": -360,
+          "maximum": 360
+        },
+        "color": {
+          "$ref": "#/$defs/color"
+        },
+        "movable": {
+          "type": "boolean"
+        },
+        "light_power": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "light_color": {
+          "$ref": "#/$defs/color"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "shape_params": {
+          "$ref": "#/$defs/shape_params"
+        },
+        "facing": {
+          "description": "Which way the piece's front points. Optional, but the only reliable guard against a mirrored pair sharing one angle. Validation rejects an angle_degrees that disagrees; 'apply-facing' derives the angle from this. Angle 0 faces south, 90 west, 180 north, 270 east.",
+          "oneOf": [
+            {
+              "enum": [
+                "north",
+                "east",
+                "south",
+                "west"
+              ]
+            },
+            {
+              "$ref": "#/$defs/point"
+            }
+          ]
+        }
+      }
+    },
+    "shape_params": {
+      "type": "object",
+      "description": "Generator parameters for a parameterised shape. Each distinct set produces its own embedded OBJ. Values outside the documented range are clamped. Only shapes listed in SHAPE_PARAMETERS accept this.",
+      "additionalProperties": false,
+      "properties": {
+        "columns": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "rows": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "beam_ratio": {
+          "type": "number",
+          "minimum": 0.02,
+          "maximum": 0.4
+        },
+        "cross_braces": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "border_ratio": {
+          "type": "number",
+          "minimum": 0.02,
+          "maximum": 0.45
+        },
+        "bays": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 24
+        },
+        "rays": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 24
+        },
+        "folds": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 24
+        },
+        "steps": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "band_ratio": {
+          "type": "number",
+          "minimum": 0.005,
+          "maximum": 0.2
+        },
+        "tiers": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "drop_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.9
+        }
+      }
+    }
+  }
+}

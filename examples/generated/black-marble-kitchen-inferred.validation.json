@@ -1,0 +1,49 @@
+{
+  "valid": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
+  "input": "examples\\black-marble-kitchen-inferred.json",
+  "output": "generated\\black-marble-kitchen-inferred.sh3d",
+  "svg": "generated\\black-marble-kitchen-inferred.svg",
+  "png": "generated\\black-marble-kitchen-inferred.png",
+  "archive_inspection": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "counts": {
+      "property": 5,
+      "environment": 1,
+      "camera": 1,
+      "observerCamera": 2,
+      "level": 1,
+      "pieceOfFurniture": 14,
+      "light": 1,
+      "wall": 4,
+      "room": 1
+    },
+    "entries": [
+      "Home.xml",
+      "1/counter/counter.obj",
+      "1/counter/counter.mtl",
+      "2/cabinet/cabinet.obj",
+      "2/cabinet/cabinet.mtl",
+      "3/box/box.obj",
+      "3/box/box.mtl",
+      "4/island/island.obj",
+      "4/island/island.mtl",
+      "5/curved-banquette/curved-banquette.obj",
+      "5/curved-banquette/curved-banquette.mtl",
+      "6/round-table/round-table.obj",
+      "6/round-table/round-table.mtl",
+      "7/linear-pendant/linear-pendant.obj",
+      "7/linear-pendant/linear-pendant.mtl",
+      "8/crown-moulding-band_ratio0p022-steps3/crown-moulding-band_ratio0p022-steps3.obj",
+      "8/crown-moulding-band_ratio0p022-steps3/crown-moulding-band_ratio0p022-steps3.mtl",
+      "9/cylinder/cylinder.obj",
+      "9/cylinder/cylinder.mtl"
+    ],
+    "xml_version": "7000"
+  }
+}

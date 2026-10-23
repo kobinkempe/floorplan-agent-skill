@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.1.0",
+  "project": {
+    "id": "black-kitchen-project",
+    "name": "Image 2 - Inferred Black Marble Kitchen",
+    "description": "A single-room kitchen test plan inferred from one frontal perspective.",
+    "selected_level_id": "ground",
+    "default_wall_thickness_cm": 15,
+    "default_wall_height_cm": 285
+  },
+  "coordinate_system": {
+    "units": "cm",
+    "origin": "plan-top-left",
+    "x_axis": "right-east",
+    "y_axis": "down-south",
+    "z_axis": "up"
+  },
+  "provenance": {
+    "source_type": "image",
+    "measurement_status": "estimated",
+    "sources": [
+      {
+        "id": "kitchen-image",
+        "kind": "image",
+        "uri": "local-source/Documents/Files/Cell phone idea/architecturebidea/Gemini_Generated_Image_ (2).png",
+        "description": "Single frontal image of a black-paneled kitchen with marble surfaces."
+      }
+    ],
+    "observations": [
+      {
+        "id": "kitchen-observation",
+        "source_id": "kitchen-image",
+        "statement": "The image shows a one-level kitchen with a continuous rear counter, tall right-side cabinetry, a large rounded island, a curved banquette, and no visible window.",
+        "confidence": 0.86,
+        "affects": [
+          "banquette-table",
+          "banquette-table-pedestal",
+          "crown-moulding",
+          "curved-banquette",
+          "east-tall-cabinets",
+          "floor-inlay-band",
+          "floor-inlay-field",
+          "kitchen-room",
+          "linear-pendant",
+          "north-cabinet-run",
+          "north-tall-cabinet",
+          "rounded-island"
+        ]
+      }
+    ],
+    "assumptions": [
+      {
+        "id": "kitchen-size-assumption",
+        "source_id": "kitchen-image",
+        "statement": "The room is closed as a 650 by 500 cm rectangle with a 285 cm ceiling, using common cabinet depth as the primary scale cue.",
+        "confidence": 0.47,
+        "affects": [
+          "black-kitchen-project",
+          "east-wall",
+          "ground",
+          "kitchen-room",
+          "north-wall",
+          "south-wall",
+          "west-wall"
+        ]
+      },
+      {
+        "id": "kitchen-entry-assumption",
+        "source_id": "kitchen-image",
+        "statement": "A broad open passage is placed on the unseen camera-side wall; the image does not establish its exact location.",
+        "confidence": 0.2,
+        "affects": [
+          "kitchen-room"
+        ]
+      }
+    ],
+    "disclaimer": "This is an estimated spatial hypothesis from one generated image and must not be treated as measured, code-compliant, or construction-ready."
+  },
+  "levels": [
+    {
+      "id": "ground",
+      "name": "Ground floor",
+      "elevation_cm": 0,
+      "floor_thickness_cm": 20,
+      "ceiling_height_cm": 285.0,
+      "elevation_index": 0,
+      "visible": true,
+      "viewable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.55,
+        "note": "Ceiling height estimated from standard base and tall cabinetry."
+      }
+    }
+  ],
+  "cameras": [
+    {
+      "id": "kitchen-source-camera",
+      "name": "Source photo match",
+      "mode": "observer",
+      "position": {
+        "x_cm": 290,
+        "y_cm": 830,
+        "z_cm": 130
+      },
+      "target": {
+        "x_cm": 290,
+        "y_cm": 10,
+        "z_cm": 130
+      },
+      "field_of_view_degrees": 40,
+      "lens": "pinhole",
+      "active": true,
+      "matches_source_id": "kitchen-image",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.6,
+        "note": "Level view solved from the rear wall: the 285 cm wall fills 0.478 of the frame with its floor line 0.718 down, which puts the eye at 130 cm and the frame 588 cm wide at the wall, 808 cm away."
+      }
+    }
+  ],
+  "walls": [
+    {
+      "id": "north-wall",
+      "level_id": "ground",
+      "name": "Rear cabinet wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 580.0,
+        "y_cm": 0
+      },
+      "thickness_cm": 15,
+      "height_cm": 285.0,
+      "color": "#E8E6E1",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.62,
+        "note": "Rear wall is visible; length is estimated from the cabinet run."
+      }
+    },
+    {
+      "id": "east-wall",
+      "level_id": "ground",
+      "name": "Tall cabinet wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 580.0,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 580.0,
+        "y_cm": 850.0
+      },
+      "thickness_cm": 15,
+      "height_cm": 285.0,
+      "color": "#E8E6E1",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.56,
+        "note": "Right wall is visible but perspective hides its full depth."
+      }
+    },
+    {
+      "id": "south-wall",
+      "level_id": "ground",
+      "name": "Camera-side wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 580.0,
+        "y_cm": 850.0
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 850.0
+      },
+      "thickness_cm": 15,
+      "height_cm": 285.0,
+      "color": "#E8E6E1",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.2,
+        "note": "Unseen wall added to close the room."
+      }
+    },
+    {
+      "id": "west-wall",
+      "level_id": "ground",
+      "name": "Left wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 850.0
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "thickness_cm": 15,
+      "height_cm": 285.0,
+      "color": "#E8E6E1",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.38,
+        "note": "Only a narrow part of the left wall is visible."
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "id": "kitchen-room",
+      "level_id": "ground",
+      "name": "Kitchen",
+      "kind": "room",
+      "polygon": [
+        {
+          "x_cm": 7.5,
+          "y_cm": 7.5
+        },
+        {
+          "x_cm": 572.5,
+          "y_cm": 7.5
+        },
+        {
+          "x_cm": 572.5,
+          "y_cm": 842.5
+        },
+        {
+          "x_cm": 7.5,
+          "y_cm": 842.5
+        }
+      ],
+      "floor": {
+        "enabled": true,
+        "color": "#A6A29A",
+        "shininess": 0.1
+      },
+      "ceiling": {
+        "enabled": true,
+        "color": "#FFFFFF",
+        "shininess": 0.05
+      },
+      "area_visible": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.47,
+        "note": "Simple rectangle selected because only two full wall directions are visible."
+      }
+    }
+  ],
+  "openings": [],
+  "objects": [
+    {
+      "id": "north-cabinet-run",
+      "level_id": "ground",
+      "name": "Rear counter and cabinets",
+      "category": "cabinet",
+      "shape": "counter",
+      "center": {
+        "x_cm": 220.0,
+        "y_cm": 38
+      },
+      "width_cm": 408.0,
+      "depth_cm": 62,
+      "height_cm": 90,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#24272B",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.72,
+        "note": "Continuous rear counter is visible; exact width is estimated."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "north-upper-cabinets",
+      "level_id": "ground",
+      "name": "Rear upper cabinet run",
+      "category": "cabinet",
+      "shape": "cabinet",
+      "center": {
+        "x_cm": 220.0,
+        "y_cm": 29
+      },
+      "width_cm": 408.0,
+      "depth_cm": 42,
+      "height_cm": 121,
+      "elevation_cm": 155,
+      "angle_degrees": 0.0,
+      "color": "#1D2024",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.76,
+        "note": "Glossy black upper cabinets fill the rear wall above the backsplash."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "marble-backsplash",
+      "level_id": "ground",
+      "name": "Marble backsplash panel",
+      "category": "decor",
+      "shape": "box",
+      "center": {
+        "x_cm": 220.0,
+        "y_cm": 12
+      },
+      "width_cm": 408.0,
+      "depth_cm": 8,
+      "height_cm": 65,
+      "elevation_cm": 90,
+      "angle_degrees": 0,
+      "color": "#F7F4EE",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.8,
+        "note": "Continuous pale marble slab is a dominant feature in the image."
+      }
+    },
+    {
+      "id": "east-tall-cabinets",
+      "level_id": "ground",
+      "name": "Right tall cabinets",
+      "category": "cabinet",
+      "shape": "cabinet",
+      "center": {
+        "x_cm": 550,
+        "y_cm": 360
+      },
+      "width_cm": 700,
+      "depth_cm": 60,
+      "height_cm": 276,
+      "elevation_cm": 0,
+      "angle_degrees": 90.0,
+      "color": "#202328",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.64,
+        "note": "Tall glossy cabinetry and appliances occupy the right wall."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "rounded-island",
+      "level_id": "ground",
+      "name": "Rounded marble island",
+      "category": "counter",
+      "shape": "island",
+      "center": {
+        "x_cm": 311,
+        "y_cm": 362
+      },
+      "width_cm": 105,
+      "depth_cm": 88,
+      "height_cm": 92,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#2C3035",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.62,
+        "note": "Large rounded island is clearly visible; ellipse is a simplified footprint."
+      }
+    },
+    {
+      "id": "curved-banquette",
+      "level_id": "ground",
+      "name": "Curved blue banquette",
+      "category": "sofa",
+      "shape": "curved-banquette",
+      "center": {
+        "x_cm": 190,
+        "y_cm": 315
+      },
+      "width_cm": 150,
+      "depth_cm": 112,
+      "height_cm": 68,
+      "elevation_cm": 0,
+      "angle_degrees": 48.27,
+      "color": "#234A88",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.58,
+        "note": "C-shaped upholstered banquette represented by an open curved procedural model."
+      },
+      "facing": {
+        "x_cm": 223,
+        "y_cm": 352
+      }
+    },
+    {
+      "id": "banquette-table",
+      "level_id": "ground",
+      "name": "Banquette table",
+      "category": "table",
+      "shape": "round-table",
+      "center": {
+        "x_cm": 223,
+        "y_cm": 352
+      },
+      "width_cm": 90,
+      "depth_cm": 78,
+      "height_cm": 76,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#F4F1EA",
+      "movable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.55,
+        "note": "Rounded table is visible between the banquette and island."
+      }
+    },
+    {
+      "id": "linear-pendant",
+      "level_id": "ground",
+      "name": "Linear pendant light",
+      "category": "light",
+      "shape": "linear-pendant",
+      "center": {
+        "x_cm": 215,
+        "y_cm": 352
+      },
+      "width_cm": 95,
+      "depth_cm": 26,
+      "height_cm": 127,
+      "elevation_cm": 158,
+      "angle_degrees": 0,
+      "color": "#E9D9AC",
+      "light_power": 0.74,
+      "light_color": "#FFD9A3",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.66,
+        "note": "Six-light linear pendant is visible; represented by its bounding box."
+      }
+    },
+    {
+      "id": "island-top",
+      "level_id": "ground",
+      "name": "Island Top",
+      "category": "counter",
+      "shape": "island",
+      "center": {
+        "x_cm": 311,
+        "y_cm": 362
+      },
+      "width_cm": 113,
+      "depth_cm": 96,
+      "height_cm": 7,
+      "elevation_cm": 92,
+      "angle_degrees": 0,
+      "color": "#F4F1EA",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.6,
+        "note": "White marble island top, clearly proud of the black drum base."
+      }
+    },
+    {
+      "id": "north-counter-top",
+      "level_id": "ground",
+      "name": "North Counter Top",
+      "category": "counter",
+      "shape": "box",
+      "center": {
+        "x_cm": 220.0,
+        "y_cm": 38
+      },
+      "width_cm": 416.0,
+      "depth_cm": 66,
+      "height_cm": 5,
+      "elevation_cm": 90,
+      "angle_degrees": 0,
+      "color": "#F7F4EE",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.6,
+        "note": "Marble worktop running the length of the rear base cabinets."
+      }
+    },
+    {
+      "id": "floor-inlay-band",
+      "level_id": "ground",
+      "name": "Floor inlay band",
+      "category": "decor",
+      "shape": "box",
+      "center": {
+        "x_cm": 290,
+        "y_cm": 157
+      },
+      "width_cm": 490,
+      "depth_cm": 285,
+      "height_cm": 1.5,
+      "elevation_cm": 0.5,
+      "angle_degrees": 0,
+      "color": "#191A1D",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.66,
+        "note": "Black inlay border set in from the walls. A bordered floor needs two slabs because a piece carries a single colour."
+      }
+    },
+    {
+      "id": "floor-inlay-field",
+      "level_id": "ground",
+      "name": "Floor inlay field",
+      "category": "decor",
+      "shape": "box",
+      "center": {
+        "x_cm": 290,
+        "y_cm": 157
+      },
+      "width_cm": 440,
+      "depth_cm": 235,
+      "height_cm": 1.5,
+      "elevation_cm": 1.4,
+      "angle_degrees": 0,
+      "color": "#AEAAA2",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.66,
+        "note": "Pale marble field inside the inlay band."
+      }
+    },
+    {
+      "id": "crown-moulding",
+      "level_id": "ground",
+      "name": "Crown moulding",
+      "category": "decor",
+      "shape": "crown-moulding",
+      "shape_params": {
+        "steps": 3,
+        "band_ratio": 0.022
+      },
+      "center": {
+        "x_cm": 290,
+        "y_cm": 425
+      },
+      "width_cm": 566,
+      "depth_cm": 836,
+      "height_cm": 24,
+      "elevation_cm": 260,
+      "angle_degrees": 0,
+      "color": "#E2DCD2",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.7,
+        "note": "Deep white cornice runs the full perimeter in the source."
+      }
+    },
+    {
+      "id": "north-tall-cabinet",
+      "level_id": "ground",
+      "name": "Rear tall cabinet",
+      "category": "cabinet",
+      "shape": "cabinet",
+      "center": {
+        "x_cm": 474,
+        "y_cm": 32
+      },
+      "width_cm": 100,
+      "depth_cm": 64,
+      "height_cm": 276,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#1D2024",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Full-height black unit closes the rear run before the corner."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "banquette-table-pedestal",
+      "level_id": "ground",
+      "name": "Banquette table pedestal",
+      "category": "table",
+      "shape": "cylinder",
+      "center": {
+        "x_cm": 223,
+        "y_cm": 352
+      },
+      "width_cm": 26,
+      "depth_cm": 26,
+      "height_cm": 70,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#17181B",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.6,
+        "note": "Black column and disc foot under the marble top."
+      }
+    }
+  ],
+  "environment": {
+    "light_color": "#CECED2",
+    "ceiling_light_color": "#C4C4C8",
+    "sky_color": "#CCE4FC",
+    "ground_color": "#A8A8A8",
+    "walls_alpha": 0
+  }
+}

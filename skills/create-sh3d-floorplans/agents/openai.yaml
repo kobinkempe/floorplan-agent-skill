@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create SH3D Floorplans"
+  short_description: "Infer, validate, preview, and build Sweet Home 3D floorplans"
+  default_prompt: "Create a cautious, evidence-backed floorplan from the supplied room description or images, validate its JSON, and build a Sweet Home 3D .sh3d file plus previews."

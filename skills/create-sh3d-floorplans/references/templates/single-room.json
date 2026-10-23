@@ -1,0 +1,307 @@
+{
+  "schema_version": "1.1.0",
+  "project": {
+    "id": "example-project",
+    "name": "Example room",
+    "description": "One-line statement of what this plan represents and its source.",
+    "selected_level_id": "ground",
+    "default_wall_thickness_cm": 15,
+    "default_wall_height_cm": 280
+  },
+  "coordinate_system": {
+    "units": "cm",
+    "origin": "plan-top-left",
+    "x_axis": "right-east",
+    "y_axis": "down-south",
+    "z_axis": "up"
+  },
+  "provenance": {
+    "source_type": "image",
+    "measurement_status": "estimated",
+    "sources": [
+      {
+        "id": "room-image",
+        "kind": "image",
+        "uri": "path/to/reference.png",
+        "description": "What the source actually shows."
+      }
+    ],
+    "observations": [
+      {
+        "id": "room-observation",
+        "source_id": "room-image",
+        "statement": "State only what is directly visible in the source.",
+        "confidence": 0.85,
+        "affects": [
+          "example-room",
+          "north-wall"
+        ]
+      }
+    ],
+    "assumptions": [
+      {
+        "id": "scale-assumption",
+        "statement": "Overall dimensions are inferred from furniture scale; no measurement was supplied.",
+        "confidence": 0.4,
+        "affects": [
+          "example-room"
+        ],
+        "source_id": "room-image"
+      }
+    ],
+    "disclaimer": "Inferred from a single image. Not a measured or construction-ready plan."
+  },
+  "levels": [
+    {
+      "id": "ground",
+      "name": "Ground floor",
+      "elevation_cm": 0,
+      "floor_thickness_cm": 20,
+      "ceiling_height_cm": 280,
+      "elevation_index": 0,
+      "visible": true,
+      "viewable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Ceiling height inferred from proportions; not measured."
+      }
+    }
+  ],
+  "cameras": [
+    {
+      "id": "source-match",
+      "name": "Source photo match",
+      "mode": "observer",
+      "position": {
+        "x_cm": 300,
+        "y_cm": 430,
+        "z_cm": 165
+      },
+      "target": {
+        "x_cm": 300,
+        "y_cm": 30,
+        "z_cm": 120
+      },
+      "field_of_view_degrees": 68,
+      "lens": "pinhole",
+      "active": true,
+      "matches_source_id": "room-image",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Solve this with 'floorplan_tool.py camera-fit' rather than by hand. The camera must stand INSIDE the space polygon."
+      }
+    }
+  ],
+  "walls": [
+    {
+      "id": "north-wall",
+      "level_id": "ground",
+      "name": "North wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 600,
+        "y_cm": 0
+      },
+      "thickness_cm": 15,
+      "height_cm": 280,
+      "color": "#E8E4DC",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.6,
+        "note": "Rear wall, fully visible in the source."
+      }
+    },
+    {
+      "id": "east-wall",
+      "level_id": "ground",
+      "name": "East wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 600,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 600,
+        "y_cm": 500
+      },
+      "thickness_cm": 15,
+      "height_cm": 280,
+      "color": "#E8E4DC",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Partly visible at the frame edge."
+      }
+    },
+    {
+      "id": "south-wall",
+      "level_id": "ground",
+      "name": "South wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 600,
+        "y_cm": 500
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 500
+      },
+      "thickness_cm": 15,
+      "height_cm": 280,
+      "color": "#E8E4DC",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.25,
+        "note": "Camera-side wall; never visible in a single frontal image."
+      }
+    },
+    {
+      "id": "west-wall",
+      "level_id": "ground",
+      "name": "West wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 500
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "thickness_cm": 15,
+      "height_cm": 280,
+      "color": "#E8E4DC",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Partly visible at the frame edge."
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "id": "example-room",
+      "level_id": "ground",
+      "name": "Example room",
+      "kind": "room",
+      "polygon": [
+        {
+          "x_cm": 7.5,
+          "y_cm": 7.5
+        },
+        {
+          "x_cm": 592.5,
+          "y_cm": 7.5
+        },
+        {
+          "x_cm": 592.5,
+          "y_cm": 492.5
+        },
+        {
+          "x_cm": 7.5,
+          "y_cm": 492.5
+        }
+      ],
+      "floor": {
+        "enabled": true,
+        "color": "#C9C2B6",
+        "shininess": 0.15
+      },
+      "ceiling": {
+        "enabled": true,
+        "color": "#F0EDE7",
+        "shininess": 0.05
+      },
+      "area_visible": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Footprint inferred from furniture scale."
+      }
+    }
+  ],
+  "openings": [
+    {
+      "id": "north-window",
+      "wall_id": "north-wall",
+      "name": "North window",
+      "type": "window",
+      "center_offset_cm": 300,
+      "width_cm": 140,
+      "height_cm": 150,
+      "sill_height_cm": 90,
+      "depth_cm": 15,
+      "color": "#4A3A2E",
+      "swing": {
+        "hinge": "none",
+        "direction": "none",
+        "angle_degrees": 0
+      },
+      "shape_params": {
+        "columns": 2,
+        "rows": 3
+      },
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.8,
+        "note": "Window visible on the rear wall."
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "example-table",
+      "level_id": "ground",
+      "name": "Example table",
+      "category": "table",
+      "shape": "dining-table",
+      "center": {
+        "x_cm": 300,
+        "y_cm": 230
+      },
+      "width_cm": 180,
+      "depth_cm": 95,
+      "height_cm": 75,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#6B5140",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.7,
+        "note": "Table is clearly visible; dimensions estimated."
+      }
+    },
+    {
+      "id": "example-pendant",
+      "level_id": "ground",
+      "name": "Example pendant",
+      "category": "light",
+      "shape": "chandelier",
+      "center": {
+        "x_cm": 300,
+        "y_cm": 230
+      },
+      "width_cm": 70,
+      "depth_cm": 70,
+      "height_cm": 60,
+      "elevation_cm": 200,
+      "angle_degrees": 0,
+      "color": "#C9A961",
+      "movable": false,
+      "light_power": 0.6,
+      "light_color": "#FFF0D0",
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.75,
+        "note": "Pendant over the table."
+      }
+    }
+  ]
+}

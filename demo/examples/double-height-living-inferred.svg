@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2032" height="765" viewBox="0 0 2032 765">
+  <rect width="100%" height="100%" fill="#f5f2ec" />
+  <rect x="1" y="1" width="1287" height="763" rx="8" fill="#ffffff" stroke="#c8c1b7" />
+  <text x="14" y="24" font-family="sans-serif" font-size="16" font-weight="bold" fill="#262626">Ground floor · elevation 0 cm</text>
+  <polygon points="333.00,52.50 955.50,52.50 955.50,712.50 333.00,712.50" stroke-width="1.5" fill="#C0B7A5" fill-opacity="0.28" stroke="#81786b" />
+  <text x="644.25" y="382.50" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#343434">Double-height living room</text>
+  <line x1="325.50" y1="45.00" x2="963.00" y2="45.00" stroke="#E6DDD2" stroke-width="15.00" stroke-linecap="square" />
+  <line x1="963.00" y1="45.00" x2="963.00" y2="720.00" stroke="#B2A79A" stroke-width="15.00" stroke-linecap="square" />
+  <line x1="963.00" y1="720.00" x2="325.50" y2="720.00" stroke="#B2A79A" stroke-width="15.00" stroke-linecap="square" />
+  <line x1="325.50" y1="720.00" x2="325.50" y2="45.00" stroke="#B2A79A" stroke-width="15.00" stroke-linecap="square" />
+  <line x1="387.75" y1="45.00" x2="480.75" y2="45.00" stroke="#ffffff" stroke-width="17.00" />
+  <line x1="387.75" y1="45.00" x2="480.75" y2="45.00" stroke="#2489a8" stroke-width="3" />
+  <line x1="807.75" y1="45.00" x2="900.75" y2="45.00" stroke="#ffffff" stroke-width="17.00" />
+  <line x1="807.75" y1="45.00" x2="900.75" y2="45.00" stroke="#2489a8" stroke-width="3" />
+  <line x1="963.00" y1="498.75" x2="963.00" y2="566.25" stroke="#ffffff" stroke-width="17.00" />
+  <line x1="963.00" y1="498.75" x2="963.00" y2="566.25" stroke="#a56528" stroke-width="3" />
+  <line x1="325.50" y1="566.25" x2="325.50" y2="498.75" stroke="#ffffff" stroke-width="17.00" />
+  <line x1="325.50" y1="566.25" x2="325.50" y2="498.75" stroke="#a56528" stroke-width="3" />
+  <polygon points="510.75,52.50 777.75,52.50 777.75,100.50 510.75,100.50" fill="#EDE4D5" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="644.25" y1="76.50" x2="644.25" y2="114.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="644.25" cy="114.00" r="3.2" fill="#c0392b" />
+  <ellipse cx="644.25" cy="367.50" rx="41.25" ry="41.25" fill="#E0D3AC" fill-opacity="0.62" stroke="#3c3c3c" />
+  <polygon points="450.00,369.38 450.00,170.62 531.00,170.62 531.00,369.38" fill="#496A50" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="490.50" y1="270.00" x2="544.50" y2="270.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="544.50" cy="270.00" r="3.2" fill="#c0392b" />
+  <polygon points="838.50,170.62 838.50,369.38 757.50,369.38 757.50,170.62" fill="#496A50" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="798.00" y1="270.00" x2="744.00" y2="270.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="744.00" cy="270.00" r="3.2" fill="#c0392b" />
+  <ellipse cx="644.25" cy="339.75" rx="44.25" ry="44.25" fill="#956F50" fill-opacity="0.62" stroke="#3c3c3c" />
+  <polygon points="516.93,252.17 562.46,208.63 608.07,256.33 562.54,299.87" fill="#DDD4C6" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="562.50" y1="254.25" x2="594.64" y2="287.86" stroke="#c0392b" stroke-width="2" />
+  <circle cx="594.64" cy="287.86" r="3.2" fill="#c0392b" />
+  <polygon points="726.04,208.63 771.57,252.17 725.96,299.87 680.43,256.33" fill="#DDD4C6" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="726.00" y1="254.25" x2="693.86" y2="287.86" stroke="#c0392b" stroke-width="2" />
+  <circle cx="693.86" cy="287.86" r="3.2" fill="#c0392b" />
+  <polygon points="578.62,465.55 530.63,424.73 573.38,374.45 621.37,415.27" fill="#DDD4C6" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="576.00" y1="420.00" x2="606.13" y2="384.58" stroke="#c0392b" stroke-width="2" />
+  <circle cx="606.13" cy="384.58" r="3.2" fill="#c0392b" />
+  <polygon points="757.87,424.73 709.88,465.55 667.13,415.27 715.12,374.45" fill="#DDD4C6" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="712.50" y1="420.00" x2="682.37" y2="384.58" stroke="#c0392b" stroke-width="2" />
+  <circle cx="682.37" cy="384.58" r="3.2" fill="#c0392b" />
+  <polygon points="336.75,697.50 336.75,97.50 353.25,97.50 353.25,697.50" fill="#4A3527" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="345.00" y1="397.50" x2="366.75" y2="397.50" stroke="#c0392b" stroke-width="2" />
+  <circle cx="366.75" cy="397.50" r="3.2" fill="#c0392b" />
+  <polygon points="951.75,97.50 951.75,697.50 935.25,697.50 935.25,97.50" fill="#4A3527" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="943.50" y1="397.50" x2="921.75" y2="397.50" stroke="#c0392b" stroke-width="2" />
+  <circle cx="921.75" cy="397.50" r="3.2" fill="#c0392b" />
+  <polygon points="565.50,57.00 723.00,57.00 723.00,69.00 565.50,69.00" fill="#E8E1D5" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="644.25" y1="63.00" x2="644.25" y2="82.50" stroke="#c0392b" stroke-width="2" />
+  <circle cx="644.25" cy="82.50" r="3.2" fill="#c0392b" />
+  <polygon points="490.50,59.25 508.50,59.25 508.50,72.75 490.50,72.75" fill="#D8B978" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="499.50" y1="66.00" x2="499.50" y2="86.25" stroke="#c0392b" stroke-width="2" />
+  <circle cx="499.50" cy="86.25" r="3.2" fill="#c0392b" />
+  <polygon points="780.00,59.25 798.00,59.25 798.00,72.75 780.00,72.75" fill="#D8B978" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="789.00" y1="66.00" x2="789.00" y2="86.25" stroke="#c0392b" stroke-width="2" />
+  <circle cx="789.00" cy="86.25" r="3.2" fill="#c0392b" />
+  <polygon points="336.75,534.00 336.75,516.00 350.25,516.00 350.25,534.00" fill="#D8B978" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="343.50" y1="525.00" x2="363.75" y2="525.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="363.75" cy="525.00" r="3.2" fill="#c0392b" />
+  <polygon points="951.75,516.00 951.75,534.00 938.25,534.00 938.25,516.00" fill="#D8B978" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="945.00" y1="525.00" x2="924.75" y2="525.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="924.75" cy="525.00" r="3.2" fill="#c0392b" />
+  <polygon points="336.75,279.00 336.75,261.00 350.25,261.00 350.25,279.00" fill="#D8B978" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="343.50" y1="270.00" x2="363.75" y2="270.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="363.75" cy="270.00" r="3.2" fill="#c0392b" />
+  <polygon points="951.75,261.00 951.75,279.00 938.25,279.00 938.25,261.00" fill="#D8B978" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="945.00" y1="270.00" x2="924.75" y2="270.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="924.75" cy="270.00" r="3.2" fill="#c0392b" />
+  <polygon points="552.00,53.25 736.50,53.25 736.50,81.75 552.00,81.75" fill="#1B1A1E" fill-opacity="0.62" stroke="#3c3c3c" />
+  <polygon points="582.75,74.25 705.75,74.25 705.75,84.75 582.75,84.75" fill="#41210F" fill-opacity="0.62" stroke="#3c3c3c" />
+  <polygon points="588.00,59.25 700.50,59.25 700.50,69.75 588.00,69.75" fill="#C6A24C" fill-opacity="0.62" stroke="#3c3c3c" />
+  <polygon points="411.75,120.00 876.75,120.00 876.75,570.00 411.75,570.00" fill="none" stroke="#7C776D" stroke-width="1.5" stroke-dasharray="7 5" />
+  <polygon points="354.75,465.00 354.75,270.00 380.25,270.00 380.25,465.00" fill="#D9CFBC" fill-opacity="0.62" stroke="#3c3c3c" />
+  <polygon points="933.75,270.00 933.75,465.00 908.25,465.00 908.25,270.00" fill="#D9CFBC" fill-opacity="0.62" stroke="#3c3c3c" />
+  <ellipse cx="539.25" cy="453.75" rx="21.75" ry="21.75" fill="#332C2A" fill-opacity="0.62" stroke="#3c3c3c" />
+  <ellipse cx="749.25" cy="453.75" rx="21.75" ry="21.75" fill="#332C2A" fill-opacity="0.62" stroke="#3c3c3c" />
+  <polygon points="339.00,55.50 489.00,55.50 489.00,70.50 339.00,70.50" fill="#4A3527" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="414.00" y1="63.00" x2="414.00" y2="84.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="414.00" cy="84.00" r="3.2" fill="#c0392b" />
+  <polygon points="799.50,55.50 949.50,55.50 949.50,70.50 799.50,70.50" fill="#4A3527" fill-opacity="0.62" stroke="#3c3c3c" />
+  <line x1="874.50" y1="63.00" x2="874.50" y2="84.00" stroke="#c0392b" stroke-width="2" />
+  <circle cx="874.50" cy="84.00" r="3.2" fill="#c0392b" />
+  <rect x="1320" y="1" width="711" height="748" rx="8" fill="#ffffff" stroke="#c8c1b7" />
+  <text x="1333" y="24" font-family="sans-serif" font-size="16" font-weight="bold" fill="#262626">Gallery level · elevation 330 cm</text>
+  <polygon points="1364.00,180.00 1461.50,180.00 1461.50,705.00 1364.00,705.00" stroke-width="1.5" fill="#B79B83" fill-opacity="0.28" stroke="#81786b" />
+  <text x="1412.75" y="442.50" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#343434">West gallery</text>
+  <polygon points="1889.00,180.00 1986.50,180.00 1986.50,705.00 1889.00,705.00" stroke-width="1.5" fill="#B79B83" fill-opacity="0.28" stroke="#81786b" />
+  <text x="1937.75" y="442.50" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#343434">East gallery</text>
+  <polygon points="1461.50,180.00 1889.00,180.00 1889.00,705.00 1461.50,705.00" stroke-width="1.5" fill="none" stroke="#b53a3a" stroke-dasharray="8 5" />
+  <text x="1675.25" y="442.50" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#343434">Open atrium</text>
+  <line x1="1461.50" y1="180.00" x2="1461.50" y2="705.00" stroke="#C2A05A" stroke-width="4.50" stroke-linecap="square" />
+  <line x1="1889.00" y1="705.00" x2="1889.00" y2="180.00" stroke="#C2A05A" stroke-width="4.50" stroke-linecap="square" />
+  <polygon points="1364.00,45.00 1986.50,45.00 1986.50,705.00 1364.00,705.00" fill="none" stroke="#4A3529" stroke-width="1.5" stroke-dasharray="7 5" />
+</svg>

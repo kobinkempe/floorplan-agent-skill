@@ -1,5 +1,11 @@
 # Floorplan Agent Skill
 
+## Public demo
+
+[Open the live demo](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/floorplan-agent-skill/) · [Read the case study](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/case-studies/floorplan-agent-skill/)
+
+The public page is an example explorer; the complete tool runs in its intended local environment.
+
 A reusable agent workflow that turns a room description, measurements or visual reference into canonical JSON, a validated floor plan, and an editable Sweet Home 3D project.
 
 ![Author-generated room render](examples/generated/double-height-living-render.png)
@@ -48,3 +54,13 @@ python -m unittest discover -s skills/create-sh3d-floorplans/scripts -p test_flo
 ```
 
 All 26 existing tests pass. They cover the schema, representative geometry, archive generation and inspection. The example JSON files are also validated separately. This is a design and research tool: dimensions inferred from a photograph remain uncertain, and neither structural suitability nor building-code compliance is established by a passing validator. [Publication review](PUBLICATION_REVIEW.md).
+
+## Browser demo source
+
+The standalone portfolio demo is in `demo/`. To try it locally, run:
+
+```sh
+python -m http.server 8000 --bind 127.0.0.1 --directory demo
+```
+
+Open http://127.0.0.1:8000.

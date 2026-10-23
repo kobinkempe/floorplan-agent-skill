@@ -1,0 +1,1158 @@
+{
+  "schema_version": "1.1.0",
+  "project": {
+    "id": "library-dining-project",
+    "name": "Image 1 - Inferred Library Dining Room",
+    "description": "A deliberately simple test plan inferred from one perspective image.",
+    "selected_level_id": "ground",
+    "default_wall_thickness_cm": 15,
+    "default_wall_height_cm": 320
+  },
+  "coordinate_system": {
+    "units": "cm",
+    "origin": "plan-top-left",
+    "x_axis": "right-east",
+    "y_axis": "down-south",
+    "z_axis": "up"
+  },
+  "provenance": {
+    "source_type": "image",
+    "measurement_status": "estimated",
+    "sources": [
+      {
+        "id": "library-image",
+        "kind": "image",
+        "uri": "local-source/Documents/Files/Cell phone idea/architecturebidea/Gemini_Generated_Image_ (1).png",
+        "description": "Single square perspective image of a dark wood library dining room."
+      }
+    ],
+    "observations": [
+      {
+        "id": "library-observation",
+        "source_id": "library-image",
+        "statement": "The image shows a single-level library/dining room with perimeter bookcases, a long table, a high decorative ceiling, and no visible exterior windows.",
+        "confidence": 0.82,
+        "affects": [
+          "bar-cabinet",
+          "chandelier",
+          "dining-table",
+          "east-bookcases",
+          "east-books-0",
+          "east-books-1",
+          "east-books-2",
+          "east-books-3",
+          "east-books-4",
+          "north-bookcases",
+          "north-books-0",
+          "north-books-1",
+          "north-books-2",
+          "north-books-3",
+          "north-books-4",
+          "west-bookcases",
+          "west-books-0",
+          "west-books-1",
+          "west-books-2",
+          "west-books-3",
+          "west-books-4"
+        ]
+      }
+    ],
+    "assumptions": [
+      {
+        "id": "library-size-assumption",
+        "source_id": "library-image",
+        "statement": "The unseen perimeter is closed as a 650 by 550 cm rectangle with a 320 cm ceiling; dimensions are estimated from an eight-seat table and cabinetry.",
+        "confidence": 0.42,
+        "affects": [
+          "east-books-0",
+          "east-books-1",
+          "east-books-2",
+          "east-books-3",
+          "east-books-4",
+          "ground",
+          "north-books-0",
+          "north-books-1",
+          "north-books-2",
+          "north-books-3",
+          "north-books-4",
+          "west-books-0",
+          "west-books-1",
+          "west-books-2",
+          "west-books-3",
+          "west-books-4"
+        ]
+      },
+      {
+        "id": "library-entry-assumption",
+        "source_id": "library-image",
+        "statement": "A door is placed on the unseen camera-side wall solely to make the test room accessible; its existence and location are not visible.",
+        "confidence": 0.18,
+        "affects": [
+          "east-books-0",
+          "east-books-1",
+          "east-books-2",
+          "east-books-3",
+          "east-books-4",
+          "north-books-0",
+          "north-books-1",
+          "north-books-2",
+          "north-books-3",
+          "north-books-4",
+          "west-books-0",
+          "west-books-1",
+          "west-books-2",
+          "west-books-3",
+          "west-books-4"
+        ]
+      }
+    ],
+    "disclaimer": "This layout is a plausible design hypothesis from one generated perspective image, not a measured or construction-ready floorplan."
+  },
+  "levels": [
+    {
+      "id": "ground",
+      "name": "Ground floor",
+      "elevation_cm": 0,
+      "floor_thickness_cm": 20,
+      "ceiling_height_cm": 320,
+      "elevation_index": 0,
+      "visible": true,
+      "viewable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.48,
+        "note": "High ceiling inferred from tall bookcases and chandelier clearance."
+      }
+    }
+  ],
+  "cameras": [
+    {
+      "id": "library-source-camera",
+      "name": "Source photo match",
+      "mode": "observer",
+      "position": {
+        "x_cm": 152,
+        "y_cm": 516,
+        "z_cm": 178
+      },
+      "target": {
+        "x_cm": 395,
+        "y_cm": 115,
+        "z_cm": 118
+      },
+      "field_of_view_degrees": 78,
+      "lens": "pinhole",
+      "active": true,
+      "matches_source_id": "library-image",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.58,
+        "note": "Three-quarter view from the south-west corner, clear of the west bookcase run. Widened back to 78 degrees and moved behind the last chair: at 66 degrees the nearest chair covered 11 percent of the frame against the source's 2.5, and the table left two edges."
+      }
+    }
+  ],
+  "walls": [
+    {
+      "id": "north-wall",
+      "level_id": "ground",
+      "name": "Bookcase wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 650,
+        "y_cm": 0
+      },
+      "thickness_cm": 15,
+      "height_cm": 320,
+      "color": "#9A8977",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.55,
+        "note": "Rear wall is visible; exact length and thickness are estimated."
+      }
+    },
+    {
+      "id": "east-wall",
+      "level_id": "ground",
+      "name": "Right bookcase wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 650,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 650,
+        "y_cm": 550
+      },
+      "thickness_cm": 15,
+      "height_cm": 320,
+      "color": "#9A8977",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Right wall is partly visible; depth is estimated."
+      }
+    },
+    {
+      "id": "south-wall",
+      "level_id": "ground",
+      "name": "Camera-side wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 650,
+        "y_cm": 550
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 550
+      },
+      "thickness_cm": 15,
+      "height_cm": 320,
+      "color": "#9A8977",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.18,
+        "note": "Wall is behind the camera and exists only to close the test room."
+      }
+    },
+    {
+      "id": "west-wall",
+      "level_id": "ground",
+      "name": "Left bookcase wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 550
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "thickness_cm": 15,
+      "height_cm": 320,
+      "color": "#9A8977",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.52,
+        "note": "Left wall is visible but its complete depth is occluded."
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "id": "library-room",
+      "level_id": "ground",
+      "name": "Library dining room",
+      "kind": "room",
+      "polygon": [
+        {
+          "x_cm": 7.5,
+          "y_cm": 7.5
+        },
+        {
+          "x_cm": 642.5,
+          "y_cm": 7.5
+        },
+        {
+          "x_cm": 642.5,
+          "y_cm": 542.5
+        },
+        {
+          "x_cm": 7.5,
+          "y_cm": 542.5
+        }
+      ],
+      "floor": {
+        "enabled": true,
+        "color": "#221D1A",
+        "shininess": 0.4
+      },
+      "ceiling": {
+        "enabled": true,
+        "color": "#14283F",
+        "shininess": 0.2
+      },
+      "area_visible": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.46,
+        "note": "Rectangular footprint chosen as the simplest closure consistent with the view."
+      }
+    }
+  ],
+  "openings": [
+    {
+      "id": "assumed-entry-door",
+      "wall_id": "south-wall",
+      "name": "Assumed entry",
+      "type": "door",
+      "center_offset_cm": 110,
+      "width_cm": 90,
+      "height_cm": 220,
+      "sill_height_cm": 0,
+      "depth_cm": 15,
+      "color": "#997158",
+      "swing": {
+        "hinge": "left",
+        "direction": "in",
+        "angle_degrees": 90
+      },
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.18,
+        "note": "Unseen access door added for a usable test plan."
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "north-bookcases",
+      "level_id": "ground",
+      "name": "North bookcase run",
+      "category": "bookcase",
+      "shape": "bookcase",
+      "center": {
+        "x_cm": 405,
+        "y_cm": 32
+      },
+      "width_cm": 430,
+      "depth_cm": 45,
+      "height_cm": 275,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#8A6238",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.68,
+        "note": "Continuous rear bookcases are visible; bounding dimensions are estimated."
+      },
+      "shape_params": {
+        "shelves": 6,
+        "base_ratio": 0.33
+      },
+      "facing": "south"
+    },
+    {
+      "id": "east-bookcases",
+      "level_id": "ground",
+      "name": "East bookcase run",
+      "category": "bookcase",
+      "shape": "bookcase",
+      "center": {
+        "x_cm": 618,
+        "y_cm": 255
+      },
+      "width_cm": 440,
+      "depth_cm": 45,
+      "height_cm": 275,
+      "elevation_cm": 0,
+      "angle_degrees": 90.0,
+      "color": "#8A6238",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Right-side bookcases are visible; extent toward the camera is estimated."
+      },
+      "shape_params": {
+        "shelves": 6,
+        "base_ratio": 0.33
+      },
+      "facing": "west"
+    },
+    {
+      "id": "west-bookcases",
+      "level_id": "ground",
+      "name": "West bookcase run",
+      "category": "bookcase",
+      "shape": "bookcase",
+      "center": {
+        "x_cm": 32,
+        "y_cm": 285
+      },
+      "width_cm": 390,
+      "depth_cm": 45,
+      "height_cm": 275,
+      "elevation_cm": 0,
+      "angle_degrees": 270.0,
+      "color": "#8A6238",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.58,
+        "note": "Left-side bookcases are visible around the bar cabinet."
+      },
+      "shape_params": {
+        "shelves": 6,
+        "base_ratio": 0.33
+      },
+      "facing": "east"
+    },
+    {
+      "id": "bar-cabinet",
+      "level_id": "ground",
+      "name": "Lit bar cabinet",
+      "category": "cabinet",
+      "shape": "cabinet",
+      "center": {
+        "x_cm": 105,
+        "y_cm": 34
+      },
+      "width_cm": 150,
+      "depth_cm": 58,
+      "height_cm": 262,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#C29A5A",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.58,
+        "note": "Tall illuminated cabinet is visible on the left."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "dining-table",
+      "level_id": "ground",
+      "name": "Eight-seat dining table",
+      "category": "table",
+      "shape": "dining-table",
+      "center": {
+        "x_cm": 355,
+        "y_cm": 265
+      },
+      "width_cm": 290,
+      "depth_cm": 132,
+      "height_cm": 78,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#38312E",
+      "movable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.57,
+        "note": "Scale inferred from eight visible dining chairs."
+      }
+    },
+    {
+      "id": "chandelier",
+      "level_id": "ground",
+      "name": "Central chandelier",
+      "category": "light",
+      "shape": "chandelier",
+      "center": {
+        "x_cm": 355,
+        "y_cm": 265
+      },
+      "width_cm": 106,
+      "depth_cm": 106,
+      "height_cm": 166,
+      "elevation_cm": 154,
+      "angle_degrees": 0,
+      "color": "#E2D3A6",
+      "light_power": 0.55,
+      "light_color": "#FFD3A0",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.65,
+        "note": "Large central chandelier is clearly visible; dimensions are approximate."
+      },
+      "shape_params": {
+        "tiers": 4,
+        "drop_ratio": 0.35
+      }
+    },
+    {
+      "id": "chair-west-north",
+      "level_id": "ground",
+      "name": "West north dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 255,
+        "y_cm": 169
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Blue dining chair placement estimated around the table."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "chair-west-center",
+      "level_id": "ground",
+      "name": "West center dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 355,
+        "y_cm": 169
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Blue dining chair placement estimated around the table."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "chair-west-south",
+      "level_id": "ground",
+      "name": "West south dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 455,
+        "y_cm": 169
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Blue dining chair placement estimated around the table."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "chair-east-north",
+      "level_id": "ground",
+      "name": "East north dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 255,
+        "y_cm": 361
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 180.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Blue dining chair placement estimated around the table."
+      },
+      "facing": "north"
+    },
+    {
+      "id": "chair-east-center",
+      "level_id": "ground",
+      "name": "East center dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 355,
+        "y_cm": 361
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 180.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Blue dining chair placement estimated around the table."
+      },
+      "facing": "north"
+    },
+    {
+      "id": "chair-east-south",
+      "level_id": "ground",
+      "name": "East south dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 455,
+        "y_cm": 361
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 180.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Blue dining chair placement estimated around the table."
+      },
+      "facing": "north"
+    },
+    {
+      "id": "chair-north-head",
+      "level_id": "ground",
+      "name": "North head dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 172,
+        "y_cm": 265
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 270.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.5,
+        "note": "Head chair placement estimated from the visible seating count."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "chair-south-head",
+      "level_id": "ground",
+      "name": "South head dining chair",
+      "category": "chair",
+      "shape": "chair",
+      "center": {
+        "x_cm": 538,
+        "y_cm": 265
+      },
+      "width_cm": 58,
+      "depth_cm": 62,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 90.0,
+      "color": "#8FB0CC",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.5,
+        "note": "Head chair placement estimated from the visible seating count."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "coffered-ceiling",
+      "level_id": "ground",
+      "name": "Blue coffered ceiling",
+      "category": "decor",
+      "shape": "coffered-ceiling",
+      "shape_params": {
+        "columns": 3,
+        "rows": 3,
+        "beam_ratio": 0.13,
+        "cross_braces": 0
+      },
+      "center": {
+        "x_cm": 325,
+        "y_cm": 275
+      },
+      "width_cm": 630,
+      "depth_cm": 530,
+      "height_cm": 34,
+      "elevation_cm": 286,
+      "angle_degrees": 0,
+      "color": "#162940",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.8,
+        "note": "High-gloss blue coffered ceiling with deep beams."
+      }
+    },
+    {
+      "id": "north-books-0",
+      "level_id": "ground",
+      "name": "North books row 1",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 405,
+        "y_cm": 44
+      },
+      "width_cm": 380,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 90.8,
+      "angle_degrees": 0.0,
+      "color": "#6E4038",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "north-books-1",
+      "level_id": "ground",
+      "name": "North books row 2",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 405,
+        "y_cm": 44
+      },
+      "width_cm": 380,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 118.3,
+      "angle_degrees": 0.0,
+      "color": "#5E4A34",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "north-books-2",
+      "level_id": "ground",
+      "name": "North books row 3",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 405,
+        "y_cm": 44
+      },
+      "width_cm": 380,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 145.8,
+      "angle_degrees": 0.0,
+      "color": "#4E3A40",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "north-books-3",
+      "level_id": "ground",
+      "name": "North books row 4",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 405,
+        "y_cm": 44
+      },
+      "width_cm": 380,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 173.3,
+      "angle_degrees": 0.0,
+      "color": "#5A503E",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "north-books-4",
+      "level_id": "ground",
+      "name": "North books row 5",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 405,
+        "y_cm": 44
+      },
+      "width_cm": 380,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 200.8,
+      "angle_degrees": 0.0,
+      "color": "#63453A",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "north-books-5",
+      "level_id": "ground",
+      "name": "North books row 6",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 405,
+        "y_cm": 44
+      },
+      "width_cm": 380,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 228.3,
+      "angle_degrees": 0.0,
+      "color": "#584437",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "west-books-0",
+      "level_id": "ground",
+      "name": "West books row 1",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 44,
+        "y_cm": 285
+      },
+      "width_cm": 350,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 90.8,
+      "angle_degrees": 270.0,
+      "color": "#6E4038",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "west-books-1",
+      "level_id": "ground",
+      "name": "West books row 2",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 44,
+        "y_cm": 285
+      },
+      "width_cm": 350,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 118.3,
+      "angle_degrees": 270.0,
+      "color": "#5E4A34",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "west-books-2",
+      "level_id": "ground",
+      "name": "West books row 3",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 44,
+        "y_cm": 285
+      },
+      "width_cm": 350,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 145.8,
+      "angle_degrees": 270.0,
+      "color": "#4E3A40",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "west-books-3",
+      "level_id": "ground",
+      "name": "West books row 4",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 44,
+        "y_cm": 285
+      },
+      "width_cm": 350,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 173.3,
+      "angle_degrees": 270.0,
+      "color": "#5A503E",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "west-books-4",
+      "level_id": "ground",
+      "name": "West books row 5",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 44,
+        "y_cm": 285
+      },
+      "width_cm": 350,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 200.8,
+      "angle_degrees": 270.0,
+      "color": "#63453A",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "west-books-5",
+      "level_id": "ground",
+      "name": "West books row 6",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 44,
+        "y_cm": 285
+      },
+      "width_cm": 350,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 228.3,
+      "angle_degrees": 270.0,
+      "color": "#584437",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "east-books-0",
+      "level_id": "ground",
+      "name": "East books row 1",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 606,
+        "y_cm": 255
+      },
+      "width_cm": 400,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 90.8,
+      "angle_degrees": 90.0,
+      "color": "#6E4038",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "east-books-1",
+      "level_id": "ground",
+      "name": "East books row 2",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 606,
+        "y_cm": 255
+      },
+      "width_cm": 400,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 118.3,
+      "angle_degrees": 90.0,
+      "color": "#5E4A34",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "east-books-2",
+      "level_id": "ground",
+      "name": "East books row 3",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 606,
+        "y_cm": 255
+      },
+      "width_cm": 400,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 145.8,
+      "angle_degrees": 90.0,
+      "color": "#4E3A40",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "east-books-3",
+      "level_id": "ground",
+      "name": "East books row 4",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 606,
+        "y_cm": 255
+      },
+      "width_cm": 400,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 173.3,
+      "angle_degrees": 90.0,
+      "color": "#5A503E",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "east-books-4",
+      "level_id": "ground",
+      "name": "East books row 5",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 606,
+        "y_cm": 255
+      },
+      "width_cm": 400,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 200.8,
+      "angle_degrees": 90.0,
+      "color": "#63453A",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "east-books-5",
+      "level_id": "ground",
+      "name": "East books row 6",
+      "category": "decor",
+      "shape": "books",
+      "center": {
+        "x_cm": 606,
+        "y_cm": 255
+      },
+      "width_cm": 400,
+      "depth_cm": 20,
+      "height_cm": 22.5,
+      "elevation_cm": 228.3,
+      "angle_degrees": 90.0,
+      "color": "#584437",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Shelves are packed edge to edge in the source. Elevations come from bookcase_shelf_elevations() so the rows sit on the shelves the model actually generates."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "bar-glow",
+      "level_id": "ground",
+      "name": "Bar cabinet lighting",
+      "category": "light",
+      "shape": "box",
+      "center": {
+        "x_cm": 105,
+        "y_cm": 64
+      },
+      "width_cm": 128,
+      "depth_cm": 8,
+      "height_cm": 150,
+      "elevation_cm": 95,
+      "angle_degrees": 0.0,
+      "color": "#FFE9BE",
+      "light_power": 0.5,
+      "light_color": "#FFDFA8",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.6,
+        "note": "Lit glass interior; the brightest object in the source image."
+      },
+      "facing": "south"
+    }
+  ],
+  "environment": {
+    "light_color": "#C8BCA6",
+    "ceiling_light_color": "#B0A28C",
+    "sky_color": "#7E8FA4",
+    "ground_color": "#8C8578",
+    "walls_alpha": 0
+  }
+}

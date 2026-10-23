@@ -1,0 +1,1357 @@
+{
+  "schema_version": "1.1.0",
+  "project": {
+    "id": "double-height-project",
+    "name": "Image 3 - Inferred Double-Height Living Room",
+    "description": "A two-level atrium test with side galleries, tall windows, and double-height walls.",
+    "selected_level_id": "ground",
+    "default_wall_thickness_cm": 20,
+    "default_wall_height_cm": 330
+  },
+  "coordinate_system": {
+    "units": "cm",
+    "origin": "plan-top-left",
+    "x_axis": "right-east",
+    "y_axis": "down-south",
+    "z_axis": "up"
+  },
+  "provenance": {
+    "source_type": "image",
+    "measurement_status": "estimated",
+    "sources": [
+      {
+        "id": "living-image",
+        "kind": "image",
+        "uri": "local-source/Documents/Files/Cell phone idea/architecturebidea/Gemini_Generated_Image_.png",
+        "description": "Single frontal image of a symmetrical double-height living room."
+      }
+    ],
+    "observations": [
+      {
+        "id": "living-vertical-observation",
+        "source_id": "living-image",
+        "statement": "The image clearly shows a double-height central volume, side upper galleries with guards, two tall windows flanking a fireplace, and doors at both side walls.",
+        "confidence": 0.9,
+        "affects": [
+          "atrium-void",
+          "chandelier",
+          "east-gallery",
+          "east-railing",
+          "east-side-door",
+          "fireplace",
+          "ground",
+          "left-tall-window",
+          "mezzanine",
+          "north-dado-east",
+          "north-dado-west",
+          "right-tall-window",
+          "west-gallery",
+          "west-railing",
+          "west-side-door"
+        ]
+      },
+      {
+        "id": "living-symmetry-observation",
+        "source_id": "living-image",
+        "statement": "The visible composition is strongly symmetrical around the fireplace and chandelier.",
+        "confidence": 0.84,
+        "affects": [
+          "central-rug",
+          "coffee-table",
+          "east-curtain",
+          "east-side-table",
+          "firebox",
+          "fireplace-marble",
+          "left-sofa",
+          "left-tall-window",
+          "north-dado-east",
+          "north-dado-west",
+          "overmantel-sunburst",
+          "right-sofa",
+          "right-tall-window",
+          "west-curtain",
+          "west-side-table"
+        ]
+      }
+    ],
+    "assumptions": [
+      {
+        "id": "living-size-assumption",
+        "source_id": "living-image",
+        "statement": "The room is modeled as 850 by 900 cm, with a 330 cm gallery elevation and a total enclosure height of 700 cm.",
+        "confidence": 0.48,
+        "affects": [
+          "double-height-project",
+          "east-wall",
+          "ground",
+          "living-room",
+          "mezzanine",
+          "north-dado-east",
+          "north-dado-west",
+          "north-wall",
+          "south-wall",
+          "west-wall"
+        ]
+      },
+      {
+        "id": "gallery-depth-assumption",
+        "source_id": "living-image",
+        "statement": "Both side galleries are modeled as 130 cm wide and begin behind the tall-window plane so they do not cross in front of the glazing; their camera-side ends remain uncertain.",
+        "confidence": 0.44,
+        "affects": [
+          "atrium-void",
+          "east-gallery",
+          "east-railing",
+          "north-dado-east",
+          "north-dado-west",
+          "west-gallery",
+          "west-railing"
+        ]
+      },
+      {
+        "id": "south-wall-assumption",
+        "source_id": "living-image",
+        "statement": "The wall behind the camera is added only to close the test plan and has no inferred openings.",
+        "confidence": 0.16,
+        "affects": [
+          "north-dado-east",
+          "north-dado-west",
+          "south-wall"
+        ]
+      }
+    ],
+    "disclaimer": "This two-level model is an estimated interpretation of one generated perspective image and is not a measured, structural, code-compliant, or construction-ready plan."
+  },
+  "levels": [
+    {
+      "id": "ground",
+      "name": "Ground floor",
+      "elevation_cm": 0,
+      "floor_thickness_cm": 25,
+      "ceiling_height_cm": 330,
+      "elevation_index": 0,
+      "visible": true,
+      "viewable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.58,
+        "note": "Gallery underside appears roughly one conventional story above the floor."
+      }
+    },
+    {
+      "id": "mezzanine",
+      "name": "Gallery level",
+      "elevation_cm": 330,
+      "floor_thickness_cm": 22,
+      "ceiling_height_cm": 370,
+      "elevation_index": 1,
+      "visible": true,
+      "viewable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.52,
+        "note": "Upper height estimated from tall windows and ceiling proportions."
+      }
+    }
+  ],
+  "cameras": [
+    {
+      "id": "living-source-camera",
+      "name": "Source photo match",
+      "mode": "observer",
+      "position": {
+        "x_cm": 425,
+        "y_cm": 848,
+        "z_cm": 212
+      },
+      "target": {
+        "x_cm": 425,
+        "y_cm": 20,
+        "z_cm": 285
+      },
+      "field_of_view_degrees": 74,
+      "lens": "pinhole",
+      "active": true,
+      "matches_source_id": "living-image",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.68,
+        "note": "Solved from the source image: the back wall's ceiling junction sits 0.21 down the frame and its floor junction 0.79, which for a 700 cm wall 848 cm away gives a 205 cm eye, +5 degrees of pitch and a 76 degree field of view."
+      }
+    }
+  ],
+  "walls": [
+    {
+      "id": "north-wall",
+      "level_id": "ground",
+      "name": "Fireplace and window wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 850,
+        "y_cm": 0
+      },
+      "thickness_cm": 20,
+      "height_cm": 700,
+      "color": "#E6DDD2",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.66,
+        "note": "Double-height front wall is visible; exact width and height are estimated."
+      }
+    },
+    {
+      "id": "east-wall",
+      "level_id": "ground",
+      "name": "East double-height wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 850,
+        "y_cm": 0
+      },
+      "end": {
+        "x_cm": 850,
+        "y_cm": 900
+      },
+      "thickness_cm": 20,
+      "height_cm": 700,
+      "color": "#B2A79A",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.55,
+        "note": "Side wall is partly visible behind the gallery."
+      }
+    },
+    {
+      "id": "south-wall",
+      "level_id": "ground",
+      "name": "Camera-side wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 850,
+        "y_cm": 900
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 900
+      },
+      "thickness_cm": 20,
+      "height_cm": 700,
+      "color": "#B2A79A",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.16,
+        "note": "Completely unseen wall added to close the model."
+      }
+    },
+    {
+      "id": "west-wall",
+      "level_id": "ground",
+      "name": "West double-height wall",
+      "role": "exterior",
+      "start": {
+        "x_cm": 0,
+        "y_cm": 900
+      },
+      "end": {
+        "x_cm": 0,
+        "y_cm": 0
+      },
+      "thickness_cm": 20,
+      "height_cm": 700,
+      "color": "#B2A79A",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.55,
+        "note": "Side wall is partly visible behind the gallery."
+      }
+    },
+    {
+      "id": "west-railing",
+      "level_id": "mezzanine",
+      "name": "West gallery guard proxy",
+      "role": "railing",
+      "start": {
+        "x_cm": 140,
+        "y_cm": 190
+      },
+      "end": {
+        "x_cm": 140,
+        "y_cm": 890
+      },
+      "thickness_cm": 6,
+      "height_cm": 110,
+      "color": "#C2A05A",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.62,
+        "note": "Visible decorative guard represented by an open post-and-rail procedural model."
+      },
+      "shape_params": {
+        "bays": 8,
+        "rays": 9
+      }
+    },
+    {
+      "id": "east-railing",
+      "level_id": "mezzanine",
+      "name": "East gallery guard proxy",
+      "role": "railing",
+      "start": {
+        "x_cm": 710,
+        "y_cm": 890
+      },
+      "end": {
+        "x_cm": 710,
+        "y_cm": 190
+      },
+      "thickness_cm": 6,
+      "height_cm": 110,
+      "color": "#C2A05A",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.62,
+        "note": "Visible decorative guard represented by an open post-and-rail procedural model."
+      },
+      "shape_params": {
+        "bays": 8,
+        "rays": 9
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "id": "living-room",
+      "level_id": "ground",
+      "name": "Double-height living room",
+      "kind": "room",
+      "polygon": [
+        {
+          "x_cm": 10,
+          "y_cm": 10
+        },
+        {
+          "x_cm": 840,
+          "y_cm": 10
+        },
+        {
+          "x_cm": 840,
+          "y_cm": 890
+        },
+        {
+          "x_cm": 10,
+          "y_cm": 890
+        }
+      ],
+      "floor": {
+        "enabled": true,
+        "color": "#C0B7A5",
+        "shininess": 0.08
+      },
+      "ceiling": {
+        "enabled": false,
+        "color": "#E8E0D6",
+        "shininess": 0.1
+      },
+      "area_visible": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Full ground-floor rectangle with ceiling disabled for the open volume."
+      }
+    },
+    {
+      "id": "west-gallery",
+      "level_id": "mezzanine",
+      "name": "West gallery",
+      "kind": "gallery",
+      "polygon": [
+        {
+          "x_cm": 10,
+          "y_cm": 190
+        },
+        {
+          "x_cm": 140,
+          "y_cm": 190
+        },
+        {
+          "x_cm": 140,
+          "y_cm": 890
+        },
+        {
+          "x_cm": 10,
+          "y_cm": 890
+        }
+      ],
+      "floor": {
+        "enabled": true,
+        "color": "#B79B83",
+        "shininess": 0.15
+      },
+      "ceiling": {
+        "enabled": true,
+        "color": "#E8E0D6",
+        "shininess": 0.1
+      },
+      "area_visible": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.48,
+        "note": "Visible side gallery; width and unseen depth are estimated."
+      }
+    },
+    {
+      "id": "east-gallery",
+      "level_id": "mezzanine",
+      "name": "East gallery",
+      "kind": "gallery",
+      "polygon": [
+        {
+          "x_cm": 710,
+          "y_cm": 190
+        },
+        {
+          "x_cm": 840,
+          "y_cm": 190
+        },
+        {
+          "x_cm": 840,
+          "y_cm": 890
+        },
+        {
+          "x_cm": 710,
+          "y_cm": 890
+        }
+      ],
+      "floor": {
+        "enabled": true,
+        "color": "#B79B83",
+        "shininess": 0.15
+      },
+      "ceiling": {
+        "enabled": true,
+        "color": "#E8E0D6",
+        "shininess": 0.1
+      },
+      "area_visible": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.48,
+        "note": "Visible side gallery; width and unseen depth are estimated."
+      }
+    },
+    {
+      "id": "atrium-void",
+      "level_id": "mezzanine",
+      "name": "Open atrium",
+      "kind": "void",
+      "polygon": [
+        {
+          "x_cm": 140,
+          "y_cm": 190
+        },
+        {
+          "x_cm": 710,
+          "y_cm": 190
+        },
+        {
+          "x_cm": 710,
+          "y_cm": 890
+        },
+        {
+          "x_cm": 140,
+          "y_cm": 890
+        }
+      ],
+      "floor": {
+        "enabled": false,
+        "color": "#FFFFFF",
+        "shininess": 0
+      },
+      "ceiling": {
+        "enabled": false,
+        "color": "#FFFFFF",
+        "shininess": 0
+      },
+      "area_visible": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.62,
+        "note": "Central opening between the two visible galleries."
+      }
+    }
+  ],
+  "openings": [
+    {
+      "id": "left-tall-window",
+      "wall_id": "north-wall",
+      "name": "Left tall window",
+      "type": "window",
+      "center_offset_cm": 145,
+      "width_cm": 124,
+      "height_cm": 545,
+      "sill_height_cm": 105,
+      "depth_cm": 20,
+      "color": "#3E2C21",
+      "swing": {
+        "hinge": "none",
+        "direction": "none",
+        "angle_degrees": 0
+      },
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.72,
+        "note": "Clearly visible tall window; dimensions estimated from the gallery level."
+      },
+      "shape_params": {
+        "columns": 4,
+        "rows": 12
+      }
+    },
+    {
+      "id": "right-tall-window",
+      "wall_id": "north-wall",
+      "name": "Right tall window",
+      "type": "window",
+      "center_offset_cm": 705,
+      "width_cm": 124,
+      "height_cm": 545,
+      "sill_height_cm": 105,
+      "depth_cm": 20,
+      "color": "#3E2C21",
+      "swing": {
+        "hinge": "none",
+        "direction": "none",
+        "angle_degrees": 0
+      },
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.72,
+        "note": "Clearly visible tall window; mirrored placement assumed from symmetry."
+      },
+      "shape_params": {
+        "columns": 4,
+        "rows": 12
+      }
+    },
+    {
+      "id": "east-side-door",
+      "wall_id": "east-wall",
+      "name": "East side door",
+      "type": "door",
+      "center_offset_cm": 650,
+      "width_cm": 90,
+      "height_cm": 220,
+      "sill_height_cm": 0,
+      "depth_cm": 20,
+      "color": "#987258",
+      "swing": {
+        "hinge": "right",
+        "direction": "in",
+        "angle_degrees": 90
+      },
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.52,
+        "note": "A door is visible on the right side wall; exact offset is perspective-estimated."
+      }
+    },
+    {
+      "id": "west-side-door",
+      "wall_id": "west-wall",
+      "name": "West side door",
+      "type": "door",
+      "center_offset_cm": 250,
+      "width_cm": 90,
+      "height_cm": 220,
+      "sill_height_cm": 0,
+      "depth_cm": 20,
+      "color": "#987258",
+      "swing": {
+        "hinge": "left",
+        "direction": "in",
+        "angle_degrees": 90
+      },
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.52,
+        "note": "A door is visible on the left side wall; offset follows the reversed wall direction."
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "fireplace",
+      "level_id": "ground",
+      "name": "Central fireplace",
+      "category": "fireplace",
+      "shape": "fireplace",
+      "center": {
+        "x_cm": 425,
+        "y_cm": 42
+      },
+      "width_cm": 356,
+      "depth_cm": 64,
+      "height_cm": 250,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#EDE4D5",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.72,
+        "note": "Mantel spans 287 px of a 685 px back wall in the source, so 0.42 of the 850 cm wall. Cream limestone surround."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "chandelier",
+      "level_id": "ground",
+      "name": "Double-height chandelier",
+      "category": "light",
+      "shape": "chandelier",
+      "center": {
+        "x_cm": 425,
+        "y_cm": 430
+      },
+      "width_cm": 110,
+      "depth_cm": 110,
+      "height_cm": 405,
+      "elevation_cm": 247,
+      "angle_degrees": 0,
+      "color": "#E0D3AC",
+      "light_power": 0.42,
+      "light_color": "#FFD6A1",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.66,
+        "note": "Large central chandelier is visible; simplified as a vertical cylinder."
+      },
+      "shape_params": {
+        "tiers": 4,
+        "drop_ratio": 0.72
+      }
+    },
+    {
+      "id": "left-sofa",
+      "level_id": "ground",
+      "name": "Left sofa",
+      "category": "sofa",
+      "shape": "sofa",
+      "center": {
+        "x_cm": 220,
+        "y_cm": 300
+      },
+      "width_cm": 265,
+      "depth_cm": 108,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 270.0,
+      "color": "#496A50",
+      "movable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.6,
+        "note": "Left green sofa is visible; bounding dimensions are approximate."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "right-sofa",
+      "level_id": "ground",
+      "name": "Right sofa",
+      "category": "sofa",
+      "shape": "sofa",
+      "center": {
+        "x_cm": 630,
+        "y_cm": 300
+      },
+      "width_cm": 265,
+      "depth_cm": 108,
+      "height_cm": 86,
+      "elevation_cm": 0,
+      "angle_degrees": 90.0,
+      "color": "#496A50",
+      "movable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.6,
+        "note": "Right green sofa mirrors the left sofa."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "coffee-table",
+      "level_id": "ground",
+      "name": "Central coffee table",
+      "category": "table",
+      "shape": "round-table",
+      "center": {
+        "x_cm": 425,
+        "y_cm": 393
+      },
+      "width_cm": 118,
+      "depth_cm": 118,
+      "height_cm": 46,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#956F50",
+      "movable": true,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.58,
+        "note": "Central layered coffee table simplified as one elliptical volume."
+      }
+    },
+    {
+      "id": "rear-left-armchair",
+      "level_id": "ground",
+      "name": "Rear left armchair",
+      "category": "chair",
+      "shape": "armchair",
+      "center": {
+        "x_cm": 316,
+        "y_cm": 279
+      },
+      "width_cm": 84,
+      "depth_cm": 88,
+      "height_cm": 95,
+      "elevation_cm": 0,
+      "angle_degrees": 316.284,
+      "color": "#DDD4C6",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.58,
+        "note": "One of four pale armchairs framing the coffee table."
+      },
+      "facing": {
+        "x_cm": 425,
+        "y_cm": 393
+      }
+    },
+    {
+      "id": "rear-right-armchair",
+      "level_id": "ground",
+      "name": "Rear right armchair",
+      "category": "chair",
+      "shape": "armchair",
+      "center": {
+        "x_cm": 534,
+        "y_cm": 279
+      },
+      "width_cm": 84,
+      "depth_cm": 88,
+      "height_cm": 95,
+      "elevation_cm": 0,
+      "angle_degrees": 43.716,
+      "color": "#DDD4C6",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.58,
+        "note": "One of four pale armchairs framing the coffee table."
+      },
+      "facing": {
+        "x_cm": 425,
+        "y_cm": 393
+      }
+    },
+    {
+      "id": "front-left-armchair",
+      "level_id": "ground",
+      "name": "Front left armchair",
+      "category": "chair",
+      "shape": "armchair",
+      "center": {
+        "x_cm": 334,
+        "y_cm": 500
+      },
+      "width_cm": 84,
+      "depth_cm": 88,
+      "height_cm": 95,
+      "elevation_cm": 0,
+      "angle_degrees": 220.38,
+      "color": "#DDD4C6",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Foreground chair placement is perspective-estimated."
+      },
+      "facing": {
+        "x_cm": 425,
+        "y_cm": 393
+      }
+    },
+    {
+      "id": "front-right-armchair",
+      "level_id": "ground",
+      "name": "Front right armchair",
+      "category": "chair",
+      "shape": "armchair",
+      "center": {
+        "x_cm": 516,
+        "y_cm": 500
+      },
+      "width_cm": 84,
+      "depth_cm": 88,
+      "height_cm": 95,
+      "elevation_cm": 0,
+      "angle_degrees": 139.62,
+      "color": "#DDD4C6",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Foreground chair placement is perspective-estimated."
+      },
+      "facing": {
+        "x_cm": 425,
+        "y_cm": 393
+      }
+    },
+    {
+      "id": "coffered-ceiling",
+      "level_id": "mezzanine",
+      "name": "Coffered ceiling",
+      "category": "decor",
+      "shape": "coffered-ceiling",
+      "shape_params": {
+        "columns": 4,
+        "rows": 4,
+        "beam_ratio": 0.11,
+        "cross_braces": 1
+      },
+      "center": {
+        "x_cm": 425,
+        "y_cm": 450
+      },
+      "width_cm": 830,
+      "depth_cm": 880,
+      "height_cm": 48,
+      "elevation_cm": 322,
+      "angle_degrees": 0,
+      "color": "#4A3529",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.62,
+        "note": "Dark wood coffered ceiling with a 4x4 grid and applied X-motif ribs, read directly from the source image."
+      }
+    },
+    {
+      "id": "west-wall-panelling",
+      "level_id": "ground",
+      "name": "West wall panelling",
+      "category": "decor",
+      "shape": "wall-panel",
+      "shape_params": {
+        "columns": 6,
+        "rows": 1,
+        "border_ratio": 0.1
+      },
+      "center": {
+        "x_cm": 26,
+        "y_cm": 470
+      },
+      "width_cm": 800,
+      "depth_cm": 22,
+      "height_cm": 330,
+      "elevation_cm": 0,
+      "angle_degrees": 270.0,
+      "color": "#4A3527",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Dark panelled dado runs the full depth of both side walls below the galleries."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "east-wall-panelling",
+      "level_id": "ground",
+      "name": "East wall panelling",
+      "category": "decor",
+      "shape": "wall-panel",
+      "shape_params": {
+        "columns": 6,
+        "rows": 1,
+        "border_ratio": 0.1
+      },
+      "center": {
+        "x_cm": 824,
+        "y_cm": 470
+      },
+      "width_cm": 800,
+      "depth_cm": 22,
+      "height_cm": 330,
+      "elevation_cm": 0,
+      "angle_degrees": 90.0,
+      "color": "#4A3527",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Dark panelled dado runs the full depth of both side walls below the galleries."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "chimney-breast-panelling",
+      "level_id": "ground",
+      "name": "Chimney breast panelling",
+      "category": "decor",
+      "shape": "wall-panel",
+      "shape_params": {
+        "columns": 3,
+        "rows": 1,
+        "border_ratio": 0.08
+      },
+      "center": {
+        "x_cm": 425,
+        "y_cm": 24
+      },
+      "width_cm": 210,
+      "depth_cm": 16,
+      "height_cm": 690,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#E8E1D5",
+      "movable": false,
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.55,
+        "note": "Full-height fluted cream chimney breast rising between the two tall windows."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "fireplace-left-sconce",
+      "level_id": "ground",
+      "name": "Fireplace Left Sconce",
+      "category": "light",
+      "shape": "sconce",
+      "center": {
+        "x_cm": 232,
+        "y_cm": 28
+      },
+      "width_cm": 24,
+      "depth_cm": 18,
+      "height_cm": 80,
+      "elevation_cm": 175,
+      "angle_degrees": 0.0,
+      "color": "#D8B978",
+      "movable": false,
+      "light_power": 0.22,
+      "light_color": "#FFE6B8",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Slim gilt vertical sconces appear on the chimney breast and both side walls at two levels."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "fireplace-right-sconce",
+      "level_id": "ground",
+      "name": "Fireplace Right Sconce",
+      "category": "light",
+      "shape": "sconce",
+      "center": {
+        "x_cm": 618,
+        "y_cm": 28
+      },
+      "width_cm": 24,
+      "depth_cm": 18,
+      "height_cm": 80,
+      "elevation_cm": 175,
+      "angle_degrees": 0.0,
+      "color": "#D8B978",
+      "movable": false,
+      "light_power": 0.22,
+      "light_color": "#FFE6B8",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Slim gilt vertical sconces appear on the chimney breast and both side walls at two levels."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "west-sconce-front",
+      "level_id": "ground",
+      "name": "West Sconce Front",
+      "category": "light",
+      "shape": "sconce",
+      "center": {
+        "x_cm": 24,
+        "y_cm": 640
+      },
+      "width_cm": 24,
+      "depth_cm": 18,
+      "height_cm": 80,
+      "elevation_cm": 175,
+      "angle_degrees": 270.0,
+      "color": "#D8B978",
+      "movable": false,
+      "light_power": 0.22,
+      "light_color": "#FFE6B8",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Slim gilt vertical sconces appear on the chimney breast and both side walls at two levels."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "east-sconce-front",
+      "level_id": "ground",
+      "name": "East Sconce Front",
+      "category": "light",
+      "shape": "sconce",
+      "center": {
+        "x_cm": 826,
+        "y_cm": 640
+      },
+      "width_cm": 24,
+      "depth_cm": 18,
+      "height_cm": 80,
+      "elevation_cm": 175,
+      "angle_degrees": 90.0,
+      "color": "#D8B978",
+      "movable": false,
+      "light_power": 0.22,
+      "light_color": "#FFE6B8",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Slim gilt vertical sconces appear on the chimney breast and both side walls at two levels."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "west-sconce-upper",
+      "level_id": "ground",
+      "name": "West Sconce Upper",
+      "category": "light",
+      "shape": "sconce",
+      "center": {
+        "x_cm": 24,
+        "y_cm": 300
+      },
+      "width_cm": 24,
+      "depth_cm": 18,
+      "height_cm": 80,
+      "elevation_cm": 430,
+      "angle_degrees": 270.0,
+      "color": "#D8B978",
+      "movable": false,
+      "light_power": 0.22,
+      "light_color": "#FFE6B8",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Slim gilt vertical sconces appear on the chimney breast and both side walls at two levels."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "east-sconce-upper",
+      "level_id": "ground",
+      "name": "East Sconce Upper",
+      "category": "light",
+      "shape": "sconce",
+      "center": {
+        "x_cm": 826,
+        "y_cm": 300
+      },
+      "width_cm": 24,
+      "depth_cm": 18,
+      "height_cm": 80,
+      "elevation_cm": 430,
+      "angle_degrees": 90.0,
+      "color": "#D8B978",
+      "movable": false,
+      "light_power": 0.22,
+      "light_color": "#FFE6B8",
+      "evidence": {
+        "basis": "estimated",
+        "confidence": 0.5,
+        "note": "Slim gilt vertical sconces appear on the chimney breast and both side walls at two levels."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "fireplace-marble",
+      "level_id": "ground",
+      "name": "Fireplace marble slip",
+      "category": "decor",
+      "shape": "box",
+      "center": {
+        "x_cm": 425,
+        "y_cm": 30
+      },
+      "width_cm": 246,
+      "depth_cm": 38,
+      "height_cm": 195,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#1B1A1E",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.74,
+        "note": "Black marble slip fills the opening of the cream surround; its top sits just below the lintel so the two solids share no face."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "firebox",
+      "level_id": "ground",
+      "name": "Firebox",
+      "category": "decor",
+      "shape": "box",
+      "center": {
+        "x_cm": 425,
+        "y_cm": 46
+      },
+      "width_cm": 164,
+      "depth_cm": 14,
+      "height_cm": 137,
+      "elevation_cm": 20,
+      "angle_degrees": 0.0,
+      "color": "#41210F",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.7,
+        "note": "Lit firebox, 180 x 128 cm from the source. Modelled as a recessed solid rather than a wall cutout, which would frame the sky."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "overmantel-sunburst",
+      "level_id": "ground",
+      "name": "Overmantel sunburst",
+      "category": "decor",
+      "shape": "sunburst",
+      "shape_params": {
+        "rays": 11
+      },
+      "center": {
+        "x_cm": 425,
+        "y_cm": 26
+      },
+      "width_cm": 150,
+      "depth_cm": 14,
+      "height_cm": 76,
+      "elevation_cm": 256,
+      "angle_degrees": 0.0,
+      "color": "#C6A24C",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.68,
+        "note": "Gilt fan medallion sits on the mantel shelf, centred on the breast."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "central-rug",
+      "level_id": "ground",
+      "name": "Geometric rug",
+      "category": "decor",
+      "shape": "rug",
+      "shape_params": {
+        "border_ratio": 0.07
+      },
+      "center": {
+        "x_cm": 425,
+        "y_cm": 400
+      },
+      "width_cm": 620,
+      "depth_cm": 600,
+      "height_cm": 3,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#7C776D",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.62,
+        "note": "Large black-and-white geometric rug fills the seating area. Modelled as a single pale value with a raised border; the pattern cannot be represented without a texture."
+      }
+    },
+    {
+      "id": "west-curtain",
+      "level_id": "ground",
+      "name": "West curtain",
+      "category": "decor",
+      "shape": "curtain",
+      "shape_params": {
+        "folds": 7
+      },
+      "center": {
+        "x_cm": 56,
+        "y_cm": 430
+      },
+      "width_cm": 260,
+      "depth_cm": 34,
+      "height_cm": 330,
+      "elevation_cm": 0,
+      "angle_degrees": 270.0,
+      "color": "#D9CFBC",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Cream drapes frame both foreground edges of the source image; their extent toward the camera is unknown."
+      },
+      "facing": "east"
+    },
+    {
+      "id": "east-curtain",
+      "level_id": "ground",
+      "name": "East curtain",
+      "category": "decor",
+      "shape": "curtain",
+      "shape_params": {
+        "folds": 7
+      },
+      "center": {
+        "x_cm": 794,
+        "y_cm": 430
+      },
+      "width_cm": 260,
+      "depth_cm": 34,
+      "height_cm": 330,
+      "elevation_cm": 0,
+      "angle_degrees": 90.0,
+      "color": "#D9CFBC",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.55,
+        "note": "Mirrored from the west curtain by the room's symmetry."
+      },
+      "facing": "west"
+    },
+    {
+      "id": "west-side-table",
+      "level_id": "ground",
+      "name": "West side table",
+      "category": "table",
+      "shape": "round-table",
+      "center": {
+        "x_cm": 285,
+        "y_cm": 545
+      },
+      "width_cm": 58,
+      "depth_cm": 58,
+      "height_cm": 62,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#332C2A",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.6,
+        "note": "Small dark-topped round table outboard of each sofa arm."
+      }
+    },
+    {
+      "id": "east-side-table",
+      "level_id": "ground",
+      "name": "East side table",
+      "category": "table",
+      "shape": "round-table",
+      "center": {
+        "x_cm": 565,
+        "y_cm": 545
+      },
+      "width_cm": 58,
+      "depth_cm": 58,
+      "height_cm": 62,
+      "elevation_cm": 0,
+      "angle_degrees": 0,
+      "color": "#332C2A",
+      "movable": true,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.6,
+        "note": "Mirrored from the west side table by the room's symmetry."
+      }
+    },
+    {
+      "id": "north-dado-west",
+      "level_id": "ground",
+      "name": "North wall dado west",
+      "category": "decor",
+      "shape": "wall-panel",
+      "shape_params": {
+        "columns": 2,
+        "rows": 1,
+        "border_ratio": 0.1
+      },
+      "center": {
+        "x_cm": 118,
+        "y_cm": 24
+      },
+      "width_cm": 200,
+      "depth_cm": 20,
+      "height_cm": 105,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#4A3527",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.6,
+        "note": "Walnut dado continues across the fireplace wall below the window sills."
+      },
+      "facing": "south"
+    },
+    {
+      "id": "north-dado-east",
+      "level_id": "ground",
+      "name": "North wall dado east",
+      "category": "decor",
+      "shape": "wall-panel",
+      "shape_params": {
+        "columns": 2,
+        "rows": 1,
+        "border_ratio": 0.1
+      },
+      "center": {
+        "x_cm": 732,
+        "y_cm": 24
+      },
+      "width_cm": 200,
+      "depth_cm": 20,
+      "height_cm": 105,
+      "elevation_cm": 0,
+      "angle_degrees": 0.0,
+      "color": "#4A3527",
+      "movable": false,
+      "evidence": {
+        "basis": "observed",
+        "confidence": 0.6,
+        "note": "Walnut dado continues across the fireplace wall below the window sills."
+      },
+      "facing": "south"
+    }
+  ],
+  "environment": {
+    "light_color": "#B0AAA0",
+    "ceiling_light_color": "#A29B90",
+    "sky_color": "#CCE0F2",
+    "ground_color": "#C4D6E6",
+    "walls_alpha": 0
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "black-marble-kitchen-inferred",
+    "name": "Image 2 - Inferred Black Marble Kitchen",
+    "json": "examples/black-marble-kitchen-inferred.json",
+    "render": "examples/black-marble-kitchen-render.png",
+    "plan": "examples/black-marble-kitchen-inferred.svg",
+    "sh3d": "examples/black-marble-kitchen-inferred.sh3d"
+  },
+  {
+    "id": "double-height-living-inferred",
+    "name": "Image 3 - Inferred Double-Height Living Room",
+    "json": "examples/double-height-living-inferred.json",
+    "render": "examples/double-height-living-render.png",
+    "plan": "examples/double-height-living-inferred.svg",
+    "sh3d": "examples/double-height-living-inferred.sh3d"
+  },
+  {
+    "id": "library-dining-inferred",
+    "name": "Image 1 - Inferred Library Dining Room",
+    "json": "examples/library-dining-inferred.json",
+    "render": "examples/library-dining-render.png",
+    "plan": "examples/library-dining-inferred.svg",
+    "sh3d": "examples/library-dining-inferred.sh3d"
+  }
+]

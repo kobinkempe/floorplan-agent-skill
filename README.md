@@ -1,12 +1,14 @@
 # Floorplan Agent Skill
 
+**An agent skill for turning a room idea into a plan I can inspect, revise and open in a real design application.**
+
+An attractive generated room image leaves practical questions unanswered: how large is the room, which dimensions were guessed, and how would I change the layout? I wanted an AI workflow that produces an editable design document alongside the picture.
+
+The agent interprets a description, measurements or visual reference and records walls, openings, objects and assumptions in structured JSON. Python checks that plan, generates a preview and exports an editable **Sweet Home 3D** project. The public page explores three examples; the complete validator and exporter run locally.
+
 ## Public demo
 
 [Open the live demo](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/floorplan-agent-skill/) · [Read the case study](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/case-studies/floorplan-agent-skill/)
-
-The public page is an example explorer; the complete tool runs in its intended local environment.
-
-A reusable agent workflow that turns a room description, measurements or visual reference into canonical JSON, a validated floor plan, and an editable Sweet Home 3D project.
 
 ![Author-generated room render](examples/generated/double-height-living-render.png)
 ![Generated 2D plan](examples/generated/double-height-living-inferred.png)

@@ -10,8 +10,17 @@ The agent interprets a description, measurements or visual reference and records
 
 [Open the live demo](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/floorplan-agent-skill/) · [Read the case study](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/case-studies/floorplan-agent-skill/)
 
-![Author-generated room render](examples/generated/double-height-living-render.png)
-![Generated 2D plan](examples/generated/double-height-living-inferred.png)
+## From a reference image to an editable room
+
+These are historical skill-assisted examples from **25 July 2026**. The final authoring and review iterations used **Claude Opus 5**; earlier iterations used **Claude Opus 4.8**. The reference pictures are Gemini-generated room concepts supplied by me. The results were rendered from exported SH3D geometry in the **Sweet Home 3D JavaScript Viewer**. The result pictures are renders of editable models, rather than newly generated images.
+
+| Example | Reference concept | Rendered reconstruction |
+| --- | --- | --- |
+| Double-height living room | ![Living room reference concept](examples/double-height-living-reference.png) | ![Living room reconstruction](examples/generated/double-height-living-render.png) |
+| Black marble kitchen | ![Kitchen reference concept](examples/black-marble-kitchen-reference.png) | ![Kitchen reconstruction](examples/generated/black-marble-kitchen-render.png) |
+| Library dining room | ![Library dining reference concept](examples/library-dining-reference.png) | ![Library dining reconstruction](examples/generated/library-dining-render.png) |
+
+Open any image at full size, or compare the reference, plan and render in the live demo. [Machine-readable provenance](demo/example-provenance.json) records model IDs, dates and image hashes. These examples do not compare newer models with an unassisted baseline or establish that a skill is still necessary for the task.
 
 ## What makes this an AI project
 
@@ -37,7 +46,7 @@ python skills/create-sh3d-floorplans/scripts/floorplan_tool.py build skills/crea
 python skills/create-sh3d-floorplans/scripts/floorplan_tool.py inspect sample.sh3d
 ```
 
-For agent use, start with [SKILL.md](skills/create-sh3d-floorplans/SKILL.md). The bundled template, schema guide, camera fitting and reference-matching instructions give the agent a concrete contract instead of an open-ended drawing prompt.
+For agent use, start with [SKILL.md](skills/create-sh3d-floorplans/SKILL.md). The bundled template, schema guide, camera fitting and reference-matching instructions give the agent a concrete contract instead of an open-ended drawing prompt. Commands in that skill assume the working directory is `skills/create-sh3d-floorplans/`; the commands above run from the repository root.
 
 ## Design decisions
 
@@ -47,7 +56,7 @@ For agent use, start with [SKILL.md](skills/create-sh3d-floorplans/SKILL.md). Th
 - Generate the XML and model assets inside the SH3D archive from source.
 - Use bounded render/review cycles; stop when the exporter cannot express the requested visual detail.
 
-Three inferred example rooms and their author-generated renders are included. Original reference photographs are excluded; the renders show the current implementation and should not be read as a verified similarity score.
+Three inferred example rooms, their reference concepts and generated outputs are included. Dimensions and unseen geometry are inferred; the renders should not be read as a verified similarity score.
 
 ## Validation and limits
 
@@ -55,7 +64,9 @@ Three inferred example rooms and their author-generated renders are included. Or
 python -m unittest discover -s skills/create-sh3d-floorplans/scripts -p test_floorplan_tool.py
 ```
 
-All 26 existing tests pass. They cover the schema, representative geometry, archive generation and inspection. The example JSON files are also validated separately. This is a design and research tool: dimensions inferred from a photograph remain uncertain, and neither structural suitability nor building-code compliance is established by a passing validator. [Publication review](PUBLICATION_REVIEW.md).
+The tests cover the schema, representative geometry, archive generation and inspection. Validate the example JSON files separately when changing them. This is a design and research tool: dimensions inferred from a picture remain uncertain, and neither structural suitability nor building-code compliance is established by a passing validator.
+
+Sweet Home 3D and its viewer are separate dependencies; neither is bundled. See the [render and compare setup](skills/create-sh3d-floorplans/references/render-iteration.md) for the viewer download and local rendering workflow.
 
 ## Browser demo source
 

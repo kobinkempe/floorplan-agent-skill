@@ -5,7 +5,8 @@
     "json": "examples/black-marble-kitchen-inferred.json",
     "render": "examples/black-marble-kitchen-render.png",
     "plan": "examples/black-marble-kitchen-inferred.svg",
-    "sh3d": "examples/black-marble-kitchen-inferred.sh3d"
+    "sh3d": "examples/black-marble-kitchen-inferred.sh3d",
+    "reference": "examples/black-marble-kitchen-reference.png"
   },
   {
     "id": "double-height-living-inferred",
@@ -13,7 +14,8 @@
     "json": "examples/double-height-living-inferred.json",
     "render": "examples/double-height-living-render.png",
     "plan": "examples/double-height-living-inferred.svg",
-    "sh3d": "examples/double-height-living-inferred.sh3d"
+    "sh3d": "examples/double-height-living-inferred.sh3d",
+    "reference": "examples/double-height-living-reference.png"
   },
   {
     "id": "library-dining-inferred",
@@ -21,6 +23,7 @@
     "json": "examples/library-dining-inferred.json",
     "render": "examples/library-dining-render.png",
     "plan": "examples/library-dining-inferred.svg",
-    "sh3d": "examples/library-dining-inferred.sh3d"
+    "sh3d": "examples/library-dining-inferred.sh3d",
+    "reference": "examples/library-dining-reference.png"
   }
 ]

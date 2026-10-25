@@ -1,0 +1,40 @@
+{
+  "example_date": "2026-07-25",
+  "authoring_and_final_iteration_agent": {
+    "name": "Claude Opus 5",
+    "recorded_model_id": "claude-opus-5"
+  },
+  "earlier_iteration_agent": {
+    "name": "Claude Opus 4.8",
+    "recorded_model_id": "claude-opus-4-8"
+  },
+  "reference_images": "Gemini-generated room concepts supplied by the project owner",
+  "renderer": "Sweet Home 3D JavaScript Viewer, from exported SH3D geometry",
+  "scope": "Historical skill-assisted examples, not a comparison against newer models or an unassisted baseline. Dimensions are inferred.",
+  "examples": [
+    {
+      "id": "double-height-living-inferred",
+      "name": "Double-height living room",
+      "reference": "examples/double-height-living-reference.png",
+      "render": "examples/double-height-living-render.png",
+      "reference_sha256": "f519c57d3c8db2cf86c1533be4596035b9df597b447ddfd33137a8a7d0636a82",
+      "render_sha256": "23d04a0f691e1a78837414fd65ccac0ba1a2070d30602512e303931a6168fa14"
+    },
+    {
+      "id": "black-marble-kitchen-inferred",
+      "name": "Black marble kitchen",
+      "reference": "examples/black-marble-kitchen-reference.png",
+      "render": "examples/black-marble-kitchen-render.png",
+      "reference_sha256": "64c0c96ff317d89d9152cd0c94dc8392d8aec2fa7e2a719b3100c4266dbc2633",
+      "render_sha256": "029f57544861e26ab45f8e369f0b75e66fe9cccc431c95d4abb53bd239f8d427"
+    },
+    {
+      "id": "library-dining-inferred",
+      "name": "Library dining room",
+      "reference": "examples/library-dining-reference.png",
+      "render": "examples/library-dining-render.png",
+      "reference_sha256": "bbab77a3fee98b2f0f621718b251011209e667bda9a72ba3e0d2750c68b26ca1",
+      "render_sha256": "a5c6355e9bba984045951cf88e29eac91e218a37b87d5352f742988d8cd6d4f6"
+    }
+  ]
+}

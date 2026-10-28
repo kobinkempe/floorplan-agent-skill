@@ -8,11 +8,11 @@ The agent interprets a description, measurements or visual reference and records
 
 ## Public demo
 
-[Open the live demo](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/floorplan-agent-skill/) · [Read the case study](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/case-studies/floorplan-agent-skill/)
+[Open the live demo](https://kobinkempe.pages.dev/floorplan-agent-skill/) · [Read the case study](https://kobinkempe.pages.dev/case-studies/floorplan-agent-skill/)
 
 ## From a reference image to an editable room
 
-These are historical skill-assisted examples from **25 July 2026**. The final authoring and review iterations used **Claude Opus 5**; earlier iterations used **Claude Opus 4.8**. The reference pictures are Gemini-generated room concepts supplied by me. The results were rendered from exported SH3D geometry in the **Sweet Home 3D JavaScript Viewer**. The result pictures are renders of editable models, rather than newly generated images.
+These skill-assisted examples are from **July 25, 2026**. The final authoring and review iterations used **Claude Opus 5**; earlier iterations used **Claude Opus 4.8**. The reference pictures are Gemini-generated room concepts supplied by me. The results were rendered from exported SH3D geometry in the **Sweet Home 3D JavaScript Viewer**. The result pictures are renders of editable models, rather than newly generated images.
 
 | Example | Reference concept | Rendered reconstruction |
 | --- | --- | --- |

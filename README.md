@@ -8,7 +8,7 @@ The agent interprets a description, measurements or visual reference and records
 
 ## Public demo
 
-[Open the live demo](https://kobinkempe.pages.dev/floorplan-agent-skill/) · [Read the case study](https://kobinkempe.pages.dev/case-studies/floorplan-agent-skill/)
+[Open the live demo](https://kobinkempe.pages.dev/floorplan-agent-skill/) · [See project details](https://kobinkempe.pages.dev/projects/floorplan-agent-skill/)
 
 ## From a reference image to an editable room
 
